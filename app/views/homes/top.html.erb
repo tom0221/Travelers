@@ -7,6 +7,13 @@
 
 
 	<!-- 新着投稿写真を9枚載せる。 -->
+
 	<% @post_images.each do |post_image| %>
+		<%= attachment_image_tag @post_image,:image %>
+
+		<%= post_image.title %>
+
+		<%= post_image.user.name %>
+
 
 	<% end %>
