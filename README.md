@@ -1,24 +1,24 @@
-# README
+# Travelers
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サイト概要
+世界の写真を投稿できるサイト。登録無料で、閲覧は登録なしでも可能。登録すれば新規投稿、投稿に対していいねやコメントを付けることが可能になる。
 
-Things you may want to cover:
+### サイトテーマ
+世界の観光地の写真投稿サイト
 
-* Ruby version
+### テーマを選んだ理由
+旅行が好きで、コロナの影響でリアル旅行は出来ないが、世界各地の写真を集めたサイトを作ることでバーチャル旅行したいと思ったから。
 
-* System dependencies
+### ターゲットユーザ
+20代〜40代の男女
 
-* Configuration
+### 主な利用シーン
+旅行の計画を立てる際の参考にする。インスタ映えする写真をスマートフォンの待ち受けに設定するなど。
 
-* Database creation
+### 使用フレームワーク
+Ruby on Rails (version 5.2.4.2)
 
-* Database initialization
+## 設計書
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### 機能一覧
+<https://docs.google.com/spreadsheets/d/1XrayAvnC2XnAcN0Y5rL75EVnDvBphpkC0oxWrKWxNiU/edit?usp=sharing>
