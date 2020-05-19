@@ -23,7 +23,7 @@ class PostImagesController < ApplicationController
 
   def destroy
     @post_image = PostImage.find(params[:id])
-    post_image.destroy
+    @post_image.destroy
     redirect_to root_path
   end
 
