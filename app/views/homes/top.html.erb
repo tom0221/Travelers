@@ -10,11 +10,8 @@
 
 	<% @post_images.each do |post_image| %>
 		<%= link_to post_image_path(post_image) do %>
-			<%= attachment_image_tag post_image,:image %>
-
-			<%= post_image.title%>
-
-			<%= post_image.user.name %>
+			<%= attachment_image_tag post_image,:image, size: "400x400" %>
+			Photo By <strong><%= post_image.user.name %></strong>
 		<% end %>
 
 

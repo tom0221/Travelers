@@ -7,7 +7,6 @@ class PostImagesController < ApplicationController
 
   def index
   	@post_images = PostImage.all
-    # @user.name = User.all
   end
 
   def create

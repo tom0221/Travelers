@@ -1,11 +1,18 @@
-<h2>お試し用index画面です/post_image/index</h2>
+<h2>お試し用index画面です</h2>
 
 
 
 <!-- each文で繰り返し表示させる！ -->
-	<div>
-		<%= attachment_image_tag @post_image, :image, size: "400x400" %>
-	</div>
+	<% @post_images.each do |post_image| %>
 
-<!-- ユーザー名出したい -->
+		<div>
+			画像出てるか？
+			<%= attachment_image_tag post_image, :image, size: "300x300" %>
+		<!-- ユーザー名出したい -->
+			Photo by <%= post_image.user.name %>
+		</div>
+	<% end %>
+
+
+
 
