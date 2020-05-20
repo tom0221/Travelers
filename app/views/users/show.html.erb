@@ -1,5 +1,12 @@
 <h1>My Page</h1>
 
+	<h4>イメージ画像</h4>
+	<%= attachment_image_tag @user, :profile_image_id, size: "200x200" %>
+
+	<div>
+		<%= link_to "登録内容を変更する", edit_user_path(current_user.id) %>
+	</div>
+
 	<h4>ユーザー名</h4>
 	<%= current_user.name %><br>
 	<%= current_user.email %><br>
@@ -8,5 +15,13 @@
 	<p>フォロワー</p>
 
 
+	<div>
+		<%= link_to "パスワード変更はこちら", new_user_password_path %>
+	</div>
 
-<p>Find me in app/views/users/show.html.erb</p>
+	<div>
+		<%= link_to "退会する", root_path, method: :delete %>
+<!-- 退会確認ページつくろうかな -->
+	</div>
+
+
