@@ -13,13 +13,13 @@ class UsersController < ApplicationController
 
   def update
   	@user = User.find(params[:id])
-  	@user.update(user_params)
+    @user.update(user_params)
   	redirect_to user_path(@user)
   end
 
   private#以下変更を許可する
   def user_params
-  	params.require(:user).permit(:name, :email, :profile_image_id)
+  	params.require(:user).permit(:name, :email, :password, :profile_image)
 	end
 
 end

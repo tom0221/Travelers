@@ -1,9 +1,11 @@
 <h2>ここがTOPです！！！</h2>
 
 	<h2>NEW POST！</h2>
-	
 
-	<button>新規投稿</button>
+
+	<button>
+		<%= link_to "新規投稿", new_post_image_path %>
+	</button>
 
 
 	<!-- 新着投稿写真を9枚載せる。 -->
@@ -16,3 +18,7 @@
 
 
 	<% end %>
+
+<br>
+
+	<%= link_to "もっと見る", post_images_path %>

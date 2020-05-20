@@ -1,4 +1,4 @@
-<h2>お試し用index画面です</h2>
+<h2>お試し用index予定の画面です</h2>
 
 
 
@@ -6,10 +6,11 @@
 	<% @post_images.each do |post_image| %>
 
 		<div>
-			画像出てるか？
-			<%= attachment_image_tag post_image, :image, size: "300x300" %>
-		<!-- ユーザー名出したい -->
-			Photo by <%= post_image.user.name %>
+			<%= link_to post_image_path(post_image.id) do %>
+				<%= attachment_image_tag post_image, :image, size: "300x300" %>
+			<!-- ユーザー名出したい -->
+				Photo by <%= post_image.user.name %>
+			<% end %>
 		</div>
 	<% end %>
 
