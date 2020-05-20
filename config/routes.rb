@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   get "/about" => "homes#about"
 
-  resources :post_images, only: [:new, :create, :index, :show, :edit, :update, :destroy]
-  resources :users, only: [:create, :show, :edit, :uodate, :destroy]
+  resources :post_images
+  resources :users, only: [:create, :show, :edit, :update, :destroy]
 
 end
