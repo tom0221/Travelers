@@ -1,0 +1,28 @@
+<!-- ヘッダー部分 -->
+
+	<div>
+		<%= attachment_image_tag @post_image, :image, size: "400x400" %>
+	</div>
+
+	<div>
+		<h4>
+			<%= @post_image.title %>
+		</h4>
+
+			<div style="text-align:center">
+			　<%= @post_image.created_at.strftime('%Y/%m/%d') %>
+			</div>
+			<div style="text-align:center">
+				<%= @post_image.user.name %>
+			</div>
+
+	</div>
+
+
+				<h2>しっかり反映されているか確認</h2>
+
+					<% if @post_image.user == current_user %>
+						<%= link_to "削除", post_images_path(@post_image.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
+					<% end %>
+
+						<%= link_to "戻る", post_images_path %>

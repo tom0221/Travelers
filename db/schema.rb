@@ -10,15 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_18_134520) do
+ActiveRecord::Schema.define(version: 2020_05_16_090542) do
 
   create_table "post_images", force: :cascade do |t|
     t.string "title"
     t.text "body"
     t.integer "user_id"
+    t.string "image_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "image_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2020_05_18_134520) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.string "profile_image_id"
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
