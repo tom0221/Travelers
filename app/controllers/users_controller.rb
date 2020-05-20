@@ -17,7 +17,7 @@ class UsersController < ApplicationController
   	redirect_to user_path(@user)
   end
 
-  private
+  private#以下変更を許可する
   def user_params
   	params.require(:user).permit(:name, :email, :profile_image_id)
 	end
