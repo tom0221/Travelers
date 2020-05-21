@@ -19,13 +19,46 @@
 			<div style="text-align:center">
 				<%= @post_image.user.name %>
 			</div>
+	<!-- 一旦ここにコメント表示させる -->
+			<div style="text-align:center">
+				<%= @post_comment.comment %>出る？
+			</div>
+
 	</div>
 
 
-				<h2>しっかり反映されているか確認</h2>
+				<!-- <h2>しっかり反映されているか確認</h2> -->
 
 					<% if @post_image.user == current_user %>
 						<%= link_to "削除", post_image_path(@post_image.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
 					<% end %>
 
-						<%= link_to "戻る", post_images_path %>
+						<%= link_to "戻る", post_images_path %><br>
+
+				<h4>コメント一覧</h4>
+					<% @post_image.post_comments.each do |post_comment| %><br>
+						<%= post_comment.user.name %>
+						<%= post_comment.comment %>
+							<% if post_comment.user == current_user %>
+								<div>
+									<%= link_to "削除", post_image_post_comment_path(post_comment.post_image, post_comment), method: :delete, class: "btn btn-danger pull-right" %>
+								</div>
+							<% end %>
+					<% end %>
+
+						
+
+		<!-- コメント投稿用フォーム -->
+		<%= form_for [@post_image, @post_comment] do |f| %>
+			<div class="row">
+				<div class="col-md-6">
+					<%= f.text_area :comment, rows:'3', class: "form-control",placeholder: "コメントはここに" %>
+				</div>
+			</div>
+				<%= f.submit "送信する", class: "btn btn-md btn-base-1 mt-20 pull-center" %>
+		<% end %>
+
+
+
+
+

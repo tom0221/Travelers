@@ -10,7 +10,11 @@ Rails.application.routes.draw do
   get "/users/bye_confirm" => "users#bye_confirm"
   get "/users/thanks" => "users#thanks"
 
-  resources :post_images, only: [:new, :create, :index, :show, :edit, :destroy]
+  resources :post_images, only: [:new, :create, :index, :show, :edit, :destroy] do
+  	resource :favorites, only: [:create, :destroy]
+  	resources :post_comments, only: [:create, :destroy]
+  end
   resources :users, only: [:create, :show, :edit, :update, :destroy]
+
 
 end
