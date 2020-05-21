@@ -7,8 +7,10 @@ Rails.application.routes.draw do
   root 'homes#top'
 
   get "/about" => "homes#about"
+  get "/users/bye_confirm" => "users#bye_confirm"
+  get "/users/thanks" => "users#thanks"
 
-  resources :post_images
+  resources :post_images, only: [:new, :create, :index, :show, :edit, :destroy]
   resources :users, only: [:create, :show, :edit, :update, :destroy]
 
 end
