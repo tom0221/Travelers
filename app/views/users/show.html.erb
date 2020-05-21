@@ -1,8 +1,11 @@
 <h1>My Page</h1>
 
 <!-- 	<h4>イメージ画像</h4> -->
+	<div class="image">
+		<%= attachment_image_tag @user, :profile_image, fallback: "no_image.jpg" %>
+	</div>
 
-	<%= attachment_image_tag @user, :profile_image, size: "200x200" %>
+
 
 	<div>
 		<%= link_to "登録内容を変更する", edit_user_path(current_user.id) %>
@@ -21,7 +24,7 @@
 	</div>
 
 	<div>
-		<%= link_to "退会する", root_path, method: :delete %>
+		<%= link_to "退会する", users_bye_confirm_path %>
 <!-- 退会確認ページつくろうかな -->
 	</div>
 
