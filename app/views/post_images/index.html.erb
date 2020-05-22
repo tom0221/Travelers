@@ -10,7 +10,6 @@
 			<%= link_to post_image_path(post_image.id) do %>
 				<%= attachment_image_tag post_image, :image, size: "300x250"  %>
 			<br>
-			<!-- ユーザー名出したい -->
 				Photo by <%= post_image.user.name %>
 			<!-- indexにコメント数を追加した。 -->
 				<%= link_to "#{post_image.post_comments.count} コメント", post_image_path(post_image.id) %>
