@@ -3,11 +3,13 @@
 
 
 <!-- each文で繰り返し表示させる！ -->
+
 	<% @post_images.each do |post_image| %>
 
-		<div>
+		<div class="photo">
 			<%= link_to post_image_path(post_image.id) do %>
-				<%= attachment_image_tag post_image, :image, size: "300x300" %>
+				<%= attachment_image_tag post_image, :image, size: "300x250"  %>
+			<br>
 			<!-- ユーザー名出したい -->
 				Photo by <%= post_image.user.name %>
 			<!-- indexにコメント数を追加した。 -->
@@ -16,6 +18,7 @@
 		</div>
 	<% end %>
 	<%= paginate @post_images %>
+
 
 
 
