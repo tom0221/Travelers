@@ -3,26 +3,27 @@
 
 			<h2>NEW POST！</h2>
 
-
 			<div class="new">
 				<button type="button" class="btn btn-info">
 					<%= link_to "新規投稿", new_post_image_path %>
 				</button>
 			</div>
-
 	</div>
 
 	<!-- 新着投稿写真を9枚載せる。 -->
-	<div class="row">
-	<% @post_images.each do |post_image| %>
-		<%= link_to post_image_path(post_image) do %>
-			<%= attachment_image_tag post_image,:image, size: "250x200" %>
-			Photo By <strong><%= post_image.user.name %></strong>
-		<% end %>
 
-	<% end %>
+	<div class="row">
+		<div class="photos">
+			<% @post_images.each do |post_image| %>
+				<%= link_to post_image_path(post_image) do %>
+					<%= attachment_image_tag post_image,:image, size: "250x200" %>
+				<% end %>
+				Photo By <strong><%= link_to post_image.user.name, user_path(post_image.user) %></strong>
+			<% end %>
+		</div>
 	</div>
-	<%= paginate @post_images %>
+
+		<%= paginate @post_images %>
 
 	<br>
 

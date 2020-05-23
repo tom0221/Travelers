@@ -1,31 +1,46 @@
-<h1>My Page</h1>
+<!-- ユーザー名を表示させる -->
+<h1>@<%= @user.name %></h1>
+	<% unless @user == current_user %>
+		<% if current_user.following?(@user) %>
+			<%= link_to 'フォローを外す', unfollow_path(@user.id), method: :POST %>
+		<% else %>
+			<%= link_to 'フォローする', follow_path(@user.id), method: :POST %>
+		<% end %>
+	<% end %>
 
-<!-- 	<h4>イメージ画像</h4> -->
+
+<!-- imageのサイズ縦横比指定したい -->
 	<div class="image">
 		<%= attachment_image_tag @user, :profile_image, fallback: "no_image.jpg", size: "150x150" %>
 	</div>
 
 
-
+<!-- 本人であれば、表示させる -->
 	<div>
+	  <% if @user == current_user %>
 		<%= link_to "登録内容を変更する", edit_user_path(current_user.id) %>
+	  <% end %>
 	</div>
 
 	<h4>ユーザー名</h4>
-	<%= current_user.name %><br>
-	<%= current_user.email %><br>
-	<%= current_user.post_images.count %>件<br>
-	<p>フォロー中</p><br>
-	<p>フォロワー</p>
+	<%= @user.name %><br>
+	<%= @user.post_images.count %>件<br>
+	<p>フォロー中人数</p><br>
+	<p>フォロワー人数</p>
 
+<!-- 本人であれば、表示させる -->
+	<% if @user == current_user %>
+		<div class="btn btn-info">
+			<%= link_to "パスワード変更はこちら", new_user_password_path(current_user.id) %>
+		</div>
 
-	<div>
-		<%= link_to "パスワード変更はこちら", new_user_password_path(current_user.id) %>
-	</div>
+<!-- 本人であれば、表示させる -->
+		<div class="btn btn-danger">
+			<%= link_to "退会する", users_bye_confirm_path %>
+		</div>
+	<% end %>
 
-	<div>
-		<%= link_to "退会する", users_bye_confirm_path %>
-<!-- 退会確認ページつくろうかな -->
-	</div>
-
-
+<!-- 選択してるuserの投稿一覧を出す。 -->
+		<% @user.post_images.each do |post_image| %>
+			<%= attachment_image_tag post_image,:image, size: "300x250" %>
+		<% end %>
