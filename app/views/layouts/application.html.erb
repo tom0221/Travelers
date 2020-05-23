@@ -4,12 +4,36 @@
     <title>Travelers</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
   <body>
+  <!-- ナビゲーションバー -->
+    <header class="header">
+      <div class="header-menu">
+        <ul class="nav navbar-nav navbar-right" data-hover="dropdown" data-animations="zoomIn fadeIn fadeInUp fadeIn">
+
+          
+            <% if user_signed_in? %>
+              <li><%= link_to "TOP", root_path %></li>
+              <li><%= link_to "About", about_path %></li>
+              <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+              <li><%= link_to "My Page", user_path(current_user.id) %></li>
+              <li><%= attachment_image_tag current_user, :profile_image, class: "img-circle pull-left profile-img",fallback: "no_image.jpg", size: "100x100" %></li>
+            <% else %>
+              <li><%= link_to "TOP", root_path %></li>
+              <li><%= link_to "About", about_path %></li>
+              <li><%= link_to "Login", new_user_session_path %></li>
+              <li><%= link_to "Sign up", new_user_registration_path %></li>
+            <% end %>
+          
+
+        </ul>
+      </div>
+    </header>
     <%= yield %>
   </body>
 </html>

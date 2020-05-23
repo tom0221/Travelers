@@ -1,0 +1,88 @@
+<!-- ヘッダー部分 -->
+<div class="container">
+	<div class="row">
+
+		<div class="show_photo">
+			<%= attachment_image_tag @post_image, :image, format: 'jpeg', size: "600x400" %>
+		</div>
+	</div><!-- rowのend -->
+
+
+		<div class="title-comment">
+			<h4><%= @post_image.title %></h4>
+			<h5><%= @post_image.body %></h5>
+		<!-- </div> -->
+
+
+				<div style="text-align:center">
+				　<%= @post_image.created_at.strftime('%Y/%m/%d') %>
+				</div>
+				<div style="text-align:center">
+					<%= @post_image.user.name %>
+				</div>
+		<!-- 一旦ここにコメント表示させる -->
+				<div style="text-align:center">
+					<%= @post_comment.comment %>出る？
+				</div>
+<!-- これあまりのdiv閉じ -->
+		</div>
+
+
+
+	<div class="row", style= "text-align:center">
+
+<!-- 戻るボタンは右に設置したい -->
+<!-- コメント一覧は左側に寄せたい。 -->
+
+					<% if @post_image.user == current_user %>
+						<%= link_to "削除", post_image_path(@post_image.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
+					<% end %>
+
+						<%= link_to "戻る", post_images_path %><br>
+
+
+			<!-- いいね機能 -->
+				<% if @post_image.favorited_by?(current_user) %>
+					<ol>
+						<%= link_to post_image_favorites_path(@post_image), method: :delete do %>
+						<i class="glyphicon glyphicon-heart" aria-hidden="true" style="color: red;"></i>
+						<% end %>
+					</ol>
+
+				<% else %>
+					<ol>
+						<%= link_to post_image_favorites_path(@post_image), method: :post do %>
+						<i class="glyphicon glyphicon-heart" aria-hidden="true"></i>
+						<% end %>
+					</ol>
+				<% end %>
+			<!-- いいね機能のviewここまで -->
+
+
+				<h4>コメント一覧</h4>
+					<% @post_image.post_comments.each do |post_comment| %><br>
+						<%= post_comment.user.name %>
+						<%= post_comment.comment %>
+							<% if post_comment.user == current_user %>
+								<div>
+									<%= link_to "削除", post_image_post_comment_path(post_comment.post_image, post_comment), method: :delete, class: "btn btn-danger pull-right" %>
+								</div>
+							<% end %>
+					<% end %>
+
+
+				<div class="row", style= "text-align:center">
+					<!-- コメント投稿用フォーム -->
+					<%= form_for [@post_image, @post_comment] do |f| %>
+						<!-- <div class="row"> -->
+							<div class="col-md-6 col-sm-offset-3">
+								<%= f.text_area :comment, rows:'3', class: "form-control",placeholder: "コメントはここに" %>
+							</div>
+						<!-- </div> -->
+							<%= f.submit "送信する", class: "btn btn-md btn-base-1 mt-20 pull-center" %>
+					<% end %>
+				</div>
+	</div>
+
+
+</div>
