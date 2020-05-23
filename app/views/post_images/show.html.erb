@@ -1,8 +1,8 @@
 <!-- ヘッダー部分 -->
 <div class="container">
-	<div class="row" Valign=center align=center>
+	<div class="row">
 
-		<div>
+		<div class="show_photo">
 			<%= attachment_image_tag @post_image, :image, format: 'jpeg', size: "600x400" %>
 		</div>
 	</div><!-- rowのend -->
@@ -28,7 +28,11 @@
 		</div>
 
 
-				<!-- <h2>しっかり反映されているか確認</h2> -->
+
+	<div class="row", style= "text-align:center">
+
+<!-- 戻るボタンは右に設置したい -->
+<!-- コメント一覧は左側に寄せたい。 -->
 
 					<% if @post_image.user == current_user %>
 						<%= link_to "削除", post_image_path(@post_image.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
@@ -37,7 +41,7 @@
 						<%= link_to "戻る", post_images_path %><br>
 
 
-		<!-- いいね機能 -->
+			<!-- いいね機能 -->
 				<% if @post_image.favorited_by?(current_user) %>
 					<ol>
 						<%= link_to post_image_favorites_path(@post_image), method: :delete do %>
@@ -52,7 +56,7 @@
 						<% end %>
 					</ol>
 				<% end %>
-		<!-- いいね機能のviewここまで -->
+			<!-- いいね機能のviewここまで -->
 
 
 				<h4>コメント一覧</h4>
@@ -67,20 +71,18 @@
 					<% end %>
 
 
-
-		<!-- コメント投稿用フォーム -->
-		<%= form_for [@post_image, @post_comment] do |f| %>
-			<div class="row">
-				<div class="col-md-6">
-					<%= f.text_area :comment, rows:'3', class: "form-control",placeholder: "コメントはここに" %>
+				<div class="row", style= "text-align:center">
+					<!-- コメント投稿用フォーム -->
+					<%= form_for [@post_image, @post_comment] do |f| %>
+						<!-- <div class="row"> -->
+							<div class="col-md-6 col-sm-offset-3">
+								<%= f.text_area :comment, rows:'3', class: "form-control",placeholder: "コメントはここに" %>
+							</div>
+						<!-- </div> -->
+							<%= f.submit "送信する", class: "btn btn-md btn-base-1 mt-20 pull-center" %>
+					<% end %>
 				</div>
-			</div>
-				<%= f.submit "送信する", class: "btn btn-md btn-base-1 mt-20 pull-center" %>
-		<% end %>
+	</div>
 
 
-
-
-</div>>
-
-
+</div>

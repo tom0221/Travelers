@@ -1,22 +1,20 @@
 <h2>お試し用index予定の画面です</h2>
 
-
-
 <!-- each文で繰り返し表示させる！ -->
+		<% @post_images.each do |post_image| %>
 
-	<% @post_images.each do |post_image| %>
+			<div class="photo">
+				<%= link_to post_image_path(post_image.id) do %>
+					<%= attachment_image_tag post_image, :image, size: "300x250"  %>
+				<br>
+					Photo by <%= post_image.user.name %>
+				<!-- indexにコメント数を追加した。 -->
+					<%= link_to "#{post_image.post_comments.count} コメント", post_image_path(post_image.id) %>
+				<% end %>
+			</div>
+		<% end %>
 
-		<div class="photo">
-			<%= link_to post_image_path(post_image.id) do %>
-				<%= attachment_image_tag post_image, :image, size: "300x250"  %>
-			<br>
-				Photo by <%= post_image.user.name %>
-			<!-- indexにコメント数を追加した。 -->
-				<%= link_to "#{post_image.post_comments.count} コメント", post_image_path(post_image.id) %>
-			<% end %>
-		</div>
-	<% end %>
-	<%= paginate @post_images %>
+		<%= paginate @post_images %>
 
 
 
