@@ -23,7 +23,7 @@ class User < ApplicationRecord
   end
   #フォローしていればtrueを返す
   def following?(user)
-  	following_user.include?(@user)
+  	following_user.include?(user)
   end
 
   def post_images
