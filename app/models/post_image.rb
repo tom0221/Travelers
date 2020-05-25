@@ -8,4 +8,7 @@ class PostImage < ApplicationRecord
   	favorites.where(user_id: user.id).exists?
   end
 
+  validates :image, presence: true
+  validates :title, presence: true
+
 end
