@@ -4,6 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  #バリデーション追加
+  # validates :email, presence: true
+
   attachment :profile_image
   has_many :post_images, dependent: :destroy
   has_many :post_comments, dependent: :destroy
@@ -23,7 +26,7 @@ class User < ApplicationRecord
   end
   #フォローしていればtrueを返す
   def following?(user)
-  	following_user.include?(@user)
+  	following_user.include?(user)
   end
 
   def post_images
