@@ -1,5 +1,8 @@
+<div class="container">
+  <h1>@<%= @user.name %></h1>
+  <div style="text-align:center">
 <!-- ユーザー名を表示させる -->
-<h1>@<%= @user.name %></h1>
+  
 	<% unless @user == current_user %>
 		<% if current_user.following?(@user) %>
 			<%= link_to 'フォローを外す', unfollow_path(@user.id), method: :get %>
@@ -24,9 +27,11 @@
 
 	<h4>ユーザー名</h4>
 	<%= @user.name %><br>
-	<%= @user.post_images.count %>件<br>
-	<p>フォロー中人数</p><br>
+	<p>投稿数　<%= @user.post_images.count %> 件</p><br>
+	<p>フォロー中人数</p>
+	<%= @user.follower.count %><br>
 	<p>フォロワー人数</p>
+	<%= @user.followed.count %><br>
 
 <!-- 本人であれば、表示させる -->
 	<% if @user == current_user %>
@@ -44,3 +49,5 @@
 		<% @user.post_images.each do |post_image| %>
 			<%= attachment_image_tag post_image,:image, size: "300x250" %>
 		<% end %>
+  </div>
+</div>
