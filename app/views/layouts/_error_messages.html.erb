@@ -1,6 +1,6 @@
 <!-- エラーメッセージ表示 -->
 <% if model.errors.any? %>
 	<div class="error">
-		<h3><%= @post_image.errors.count %>件空欄があります</h3>
+		<h3><%= model.errors.count %>件　不足項目があります</h3>
 	</div>
 <% end %>

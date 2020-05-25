@@ -5,7 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   #バリデーション追加
-  # validates :email, presence: true
+  validates :email, presence: true
+  validates :name, presence: true
 
   attachment :profile_image
   has_many :post_images, dependent: :destroy
