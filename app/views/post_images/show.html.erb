@@ -45,7 +45,9 @@
 			<!-- いいね機能のviewここまで -->
 
 			<!-- 部分テンプレート -->
-			<%= render partial: 'favorites/favorite', locals: { post_images: @post_images} %>
+			<div id="favorites_buttons_<%= @post_image.id %>">
+				<%= render partial: 'favorites/favorite', locals: { post_images: @post_images} %>
+			</div>
 
 
 				<h4>コメント一覧</h4>
@@ -91,7 +93,7 @@
 	<style>
 	html { height: 100% }
 	body { height: 100% }
-	#map { height: 100%; width: 100%}
+	#map { height: 80%; width: 80%}
 	</style>
 	</head>
 
