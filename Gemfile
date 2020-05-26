@@ -73,6 +73,13 @@ gem "refile-mini_magick"
 gem 'bootstrap-sass', '~> 3.4.1'
 gem 'jquery-rails'
 
+#日本語化
+gem 'devise-i18n'
+gem 'devise-i18n-views'
+
+#環境変数用
+gem 'dotenv-rails'
+
 #MySQL利用のためのgem追加
 gem 'dotenv-rails'
 group :production do
