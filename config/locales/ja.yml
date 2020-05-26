@@ -6,3 +6,28 @@ ja:
         previous: '前'
         next: '次'
         truncate: '...'
+
+
+ja:
+  activerecord:
+    attributes:
+      user:
+        name: ユーザー名
+        email: メールアドレス
+        password: パスワード
+        remember_me: "ログインを記憶する"
+
+    models:
+      user: "ユーザー"
+
+
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              blank: "を入力してください"
+            password:
+              blank: "を入力してください"
+            name:
+              blank: "を入力してください"

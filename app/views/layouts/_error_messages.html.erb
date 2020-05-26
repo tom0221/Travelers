@@ -4,3 +4,14 @@
 		<h3><%= model.errors.count %>件　不足項目があります</h3>
 	</div>
 <% end %>
+
+
+<% if model.errors.any? %>
+  <div id="error_explanation" class="alert alert-danger">
+    <ul>
+      <% model.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
