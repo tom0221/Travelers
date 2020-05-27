@@ -7,6 +7,7 @@ ja:
         next: '次'
         truncate: '...'
 
+#エラーメッセージの日本語化
 
 ja:
   activerecord:
@@ -17,8 +18,15 @@ ja:
         password: パスワード
         remember_me: "ログインを記憶する"
 
+      post_image:
+        image: 写真
+        title: タイトル
+
+
+
     models:
       user: "ユーザー"
+      post_image: "写真"
 
 
     errors:
@@ -31,3 +39,26 @@ ja:
               blank: "を入力してください"
             name:
               blank: "を入力してください"
+
+
+        post_image:
+          attributes:
+            image:
+              blank: "を選択してください"
+            title:
+              blank: "を入力してください"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
