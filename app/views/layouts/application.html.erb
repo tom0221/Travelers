@@ -16,7 +16,6 @@
       <div class="header-menu">
         <ul class="nav navbar-nav navbar-right" data-hover="dropdown" data-animations="zoomIn fadeIn fadeInUp fadeIn">
 
-          
             <% if user_signed_in? %>
               <li><%= link_to "TOP", root_path %></li>
               <li><%= link_to "About", about_path %></li>
@@ -29,15 +28,25 @@
               <li><%= link_to "Login", new_user_session_path %></li>
               <li><%= link_to "Sign up", new_user_registration_path %></li>
             <% end %>
-          
 
         </ul>
       </div>
     </header>
-<!-- ログインエラー時のflashメッセージ -->
-    <div class="alert">
-      <%= alert %>
-    </div>
+
+
+  <!-- ログインエラー時のflashメッセージ -->
+      <% if flash[:alert] %>
+        <div class="alert">
+          <%= alert %>
+        </div>
+      <% end %>
+
+  <!-- flashサクセスメッセージ  -->
+      <% if flash[:notice] %>
+        <div class="flash">
+          <%= flash[:notice] %>
+        </div>
+      <% end %>
 
     <%= yield %>
   </body>

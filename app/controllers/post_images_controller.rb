@@ -13,6 +13,7 @@ class PostImagesController < ApplicationController
   	@post_image.user_id = current_user.id
     #条件分岐
   	if @post_image.save
+      flash[:notice] = "投稿完了しました！"
   	 redirect_to root_path
     else
       render :new
