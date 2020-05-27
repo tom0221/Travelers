@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  before_action :authenticate_user!
+  before_action :authenticate_user!, only: [:show, :edit,]
 
 	def create
 	end
@@ -32,8 +32,16 @@ class UsersController < ApplicationController
     redirect_to users_thanks_path
   end
 
-  # def thanks
-  # end
+  def thanks
+  end
+
+  def show_follow
+    @user = User.find(params[:id])
+  end
+
+  def show_follower
+    @user = User.find(params[:id])
+  end
 
   private#以下変更を許可する
   def user_params

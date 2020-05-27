@@ -13,11 +13,19 @@ Rails.application.routes.draw do
   get 'follow/:id' => 'relationships#follow', as: 'follow'#フォローする
   get 'unfollow/:id' => 'relationships#unfollow', as: 'unfollow'#フォロー外す
 
+  get 'users/follower' => 'users#show_follow'
+  get 'users/followed' => 'users#show_follower'
+
+
   resources :post_images, only: [:new, :create, :index, :show, :edit, :destroy] do
   	resource :favorites, only: [:create, :destroy]
   	resources :post_comments, only: [:create, :destroy]
   end
-  resources :users, only: [:create, :show, :edit, :update, :destroy]
+  resources :users, only: [:create, :show, :edit, :update, :destroy] 
+  #   member do
+  #     get :follower, :followed
+  #   end
+  # end
 
 
 

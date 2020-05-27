@@ -40,11 +40,8 @@
 						<%= link_to "戻る", post_images_path %><br>
 
 
-			<!-- いいね機能 -->
 
-			<!-- いいね機能のviewここまで -->
-
-			<!-- 部分テンプレート -->
+			<!-- いいね機能部分テンプレート -->
 			<div id="favorites_buttons_<%= @post_image.id %>">
 				<%= render partial: 'favorites/favorite', locals: { post_images: @post_images} %>
 			</div>

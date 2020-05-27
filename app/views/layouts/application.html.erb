@@ -34,8 +34,10 @@
         </ul>
       </div>
     </header>
-
-    <%= alert %>
+<!-- ログインエラー時のflashメッセージ -->
+    <div class="alert">
+      <%= alert %>
+    </div>
 
     <%= yield %>
   </body>

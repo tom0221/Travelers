@@ -1,7 +1,7 @@
 <div class="container">
   <h1>@<%= @user.name %></h1>
   <div style="text-align:center">
-<!-- ユーザー名を表示させる -->
+
   
 	<% unless @user == current_user %>
 		<% if current_user.following?(@user) %>
@@ -29,9 +29,9 @@
 	<%= @user.name %><br>
 	<p>投稿数　<%= @user.post_images.count %> 件</p><br>
 	<p>フォロー中人数</p>
-	<%= @user.follower.count %><br>
+	<%= link_to @user.follower.count, users_follower_path(id:@user.id) %><br>
 	<p>フォロワー人数</p>
-	<%= @user.followed.count %><br>
+	<%= link_to @user.followed.count, users_followed_path(id:@user.id) %><br>
 
 <!-- 本人であれば、表示させる -->
 	<% if @user == current_user %>
