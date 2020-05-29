@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
 
-  devise_for :users
+  devise_for :users,
+  controllers: {
+    sessions: 'users/sessions',
+    # registrations: 'users/registrations',
+    omniauth_callbacks: 'users/omniauth_callbacks',
+  }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
 
@@ -21,11 +26,8 @@ Rails.application.routes.draw do
   	resource :favorites, only: [:create, :destroy]
   	resources :post_comments, only: [:create, :destroy]
   end
-  resources :users, only: [:create, :show, :edit, :update, :destroy] 
-  #   member do
-  #     get :follower, :followed
-  #   end
-  # end
+  resources :users, only: [:create, :show, :edit, :update, :destroy]
+
 
 
 

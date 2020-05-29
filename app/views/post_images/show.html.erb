@@ -1,43 +1,40 @@
 <!-- ヘッダー部分 -->
 <div class="container">
-	<div class="row">
-
+	<div style="text-align:center">
 		<div class="show_photo">
 			<%= attachment_image_tag @post_image, :image, format: 'jpeg', size: "600x400" %>
 		</div>
-	</div><!-- rowのend -->
+	</div>
 
 
 		<div class="title-comment">
-			<h4><%= @post_image.title %></h4>
-			<h5><%= @post_image.body %></h5>
+			<h4><%= @post_image.title %></h4>タイトル表示予定
+			<h5><%= @post_image.body %></h5>キャプション表示予定
 		<!-- </div> -->
 
 
-				<div style="text-align:center">
-				　<%= @post_image.created_at.strftime('%Y/%m/%d') %>
-				</div>
-				<div style="text-align:center">
-					<%= @post_image.user.name %>
-				</div>
+			<div>
+				By <%= @post_image.user.name %><!-- 投稿したユーザー名表示予定 -->
+				 <%= @post_image.created_at.strftime('%Y/%m/%d') %><!-- 日付表示予定 -->
+			</div>
 		<!-- 一旦ここにコメント表示させる -->
-				<div style="text-align:center">
-					<%= @post_comment.comment %>出る？
-				</div>
+
 		</div>
 
+		<h4>お試し</h4>
+	</div>
 
-
-	<div class="row", style= "text-align:center">
 
 <!-- 戻るボタンは右に設置したい -->
 <!-- コメント一覧は左側に寄せたい。 -->
+	<div style="text-align:center">
+		<td align="right">
+			<% if @post_image.user == current_user %>
+				<%= link_to "削除", post_image_path(@post_image.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
+			<% end %>
 
-					<% if @post_image.user == current_user %>
-						<%= link_to "削除", post_image_path(@post_image.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
-					<% end %>
-
-						<%= link_to "戻る", post_images_path %><br>
+			<%= link_to "戻る", post_images_path %><br>
+		</td>
 
 
 
@@ -47,36 +44,36 @@
 			</div>
 
 
-				<h4>コメント一覧</h4>
-					<% @post_image.post_comments.each do |post_comment| %><br>
-						<%= post_comment.user.name %>
-						<%= post_comment.comment %>
-							<% if post_comment.user == current_user %>
-								<div>
-									<%= link_to "削除", post_image_post_comment_path(post_comment.post_image, post_comment), method: :delete, class: "btn btn-danger pull-right" %>
-								</div>
-							<% end %>
+		<h4>コメント一覧</h4>
+			<% @post_image.post_comments.each do |post_comment| %><br>
+				<%= post_comment.user.name %>
+				<%= post_comment.comment %>
+
+					<% if post_comment.user == current_user %>
+						<div>
+							<%= link_to "削除", post_image_post_comment_path(post_comment.post_image, post_comment), method: :delete, class: "btn btn-danger pull-right" %>
+						</div>
 					<% end %>
 
+			<% end %>
 
-				<div class="row", style= "text-align:center">
+
+					<div>
 					<!-- コメント投稿用フォーム -->
 					<%= form_for [@post_image, @post_comment] do |f| %>
 						<!-- <div class="row"> -->
-							<div class="col-md-6 col-sm-offset-3">
+							<!-- <div class="col-md-7"> -->
 								<%= f.text_area :comment, rows:'3', class: "form-control",placeholder: "コメントはここに" %>
-							</div>
+					</div>
 						<!-- </div> -->
-							<%= f.submit "送信する", class: "btn btn-md btn-base-1 mt-20 pull-center" %>
+							<%= f.submit "送信する", class: "btn btn-success" %>
 					<% end %>
-				</div>
 	</div>
-
 
 </div>
 
 <!-- Google Map表示させる -->
-
+<div class="map">
 	<!DOCTYPE html>
 	<html lang="ja">
 
@@ -84,7 +81,7 @@
 	<meta charset="UTF-8">
 	<title>Sample_GoogleMap</title>
 
-<!-- 環境変数いれてる -->
+	<!-- 環境変数いれてる -->
 	<script src="http://maps.google.com/maps/api/js?key=<%= ENV['MAP_KEY'] %>&language=ja"></script>
 
 	<style>
@@ -109,3 +106,5 @@
 
 	</body>
 	</html>
+
+</div>

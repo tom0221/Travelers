@@ -70,7 +70,8 @@ gem 'kaminari','~> 1.1.1'
 gem "refile", require: "refile/rails", github: 'manfe/refile'
 gem "refile-mini_magick"
 
-gem 'bootstrap-sass', '~> 3.4.1'
+#最新版bootstrapに変更
+gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
 
 #日本語化
@@ -79,6 +80,11 @@ gem 'devise-i18n-views'
 
 #環境変数用
 gem 'dotenv-rails'
+
+#SNS認証用
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-rails_csrf_protection'
 
 #MySQL利用のためのgem追加
 gem 'dotenv-rails'
