@@ -2,6 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+// *{
+// 	text-align: center;
+// }
+
 .photo{
 	margin:20px;
 	padding:20px;
@@ -17,4 +22,8 @@
 .title-comment{
 	margin-top:60px;
 	margin-left:270px;
+}
+
+.map{
+ text-align: center;
 }

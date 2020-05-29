@@ -15,14 +15,65 @@
  */
 
  /*bootstrap用に追加*/
-  @import "bootstrap-sprockets";
   @import "bootstrap";
 
-.header{
-	// margin:auto 50px;
-  height:120px;
-  background-color:orange;
+* {
+   box-sizing: border-box;
 }
+
+body {
+   margin: 0;
+   padding: 0;
+   font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", メイリオ, Meiryo, "ＭＳ Ｐゴシック", "Helvetica Neue", Helvetica, Arial, sans-serif;
+   background-color: #e6e6e6;
+}
+
+ul {
+   list-style: none;
+   margin: 0;
+   display: flex;
+}
+li {
+   margin: 0 0 0 180px;
+   font-size: 20px;
+}
+nav {
+   margin: 0 0 0 auto;
+}
+
+header{
+	padding:30px 4% 10px;
+	top: 0;
+	width:100%;
+	background-color:orange;
+	height:120px;
+	align-items: center;
+}
+
+h1 {
+   margin: 0; padding: 0;
+   font-size: 30px;
+}
+
+a {
+   text-decoration: none;
+   color: #4b4b4b;
+}
+
+.p-img {
+    border-radius:50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    width:  100px;       /* ※縦横を同値に */
+    height: 100px;       /* ※縦横を同値に */
+}
+
+.icon{
+	position:absolute;
+	top:22px;
+	right:22px;
+}
+
 
 
 .alert{
