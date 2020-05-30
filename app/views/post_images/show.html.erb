@@ -1,32 +1,29 @@
 <!-- ヘッダー部分 -->
 <div class="container">
-	<div style="text-align:center">
+	
 		<div class="show_photo">
 			<%= attachment_image_tag @post_image, :image, format: 'jpeg', size: "600x400" %>
 		</div>
-	</div>
+	
 
 
 		<div class="title-comment">
-			<h4><%= @post_image.title %></h4>タイトル表示予定
-			<h5><%= @post_image.body %></h5>キャプション表示予定
+			<h4><%= @post_image.title %></h4>
+			<h5><%= @post_image.body %></h5>
 		<!-- </div> -->
 
 
 			<div>
-				By <%= @post_image.user.name %><!-- 投稿したユーザー名表示予定 -->
-				 <%= @post_image.created_at.strftime('%Y/%m/%d') %><!-- 日付表示予定 -->
-			</div>
-		<!-- 一旦ここにコメント表示させる -->
+				By <%= @post_image.user.name %>
+			</div><!-- 投稿したユーザー名表示予定 -->
+			<div class="date"> <%= @post_image.created_at.strftime('%Y/%m/%d') %>
+			</div><!-- 日付表示予定 -->
+			<!-- </div> -->
 
 		</div>
 
-		<h4>お試し</h4>
-	</div>
-
 
 <!-- 戻るボタンは右に設置したい -->
-<!-- コメント一覧は左側に寄せたい。 -->
 	<div style="text-align:center">
 		<td align="right">
 			<% if @post_image.user == current_user %>

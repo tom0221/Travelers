@@ -52,7 +52,8 @@ class User < ApplicationRecord
   # end
 
   #SNS認証
-  def self.without_sna_data(auth)
+  def self.without_sns_data(auth)
+
     user = User.where(email: auth.info.email).first
 
       if user.present?
@@ -63,8 +64,8 @@ class User < ApplicationRecord
           )
       else
         user = User.new(
-          nickname: auth.info.name,
-          email: auth.info.email,
+          name: auth.info.name,
+          email: auth.info.email
         )
         sns = SnsCredential.new(
           uid: auth.uid,
@@ -75,11 +76,11 @@ class User < ApplicationRecord
   end
 
   def self.with_sns_data(auth, snscredential)
-    user = User.where(id: snscredential.user_id).first
+   user = User.where(id: snscredential.user_id).first
     unless user.present?
       user = User.new(
-        nickname: auth.info.name,
-        email: auth.info.email,
+        name: auth.info.name,
+        email: auth.info.email
       )
     end
     return {user: user}

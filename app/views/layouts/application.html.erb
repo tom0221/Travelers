@@ -14,15 +14,15 @@
     <header class="header">
       <div class="header-menu">
 
-        <h1>Travelers</h1>
+        <h1><%= link_to "Travelers", root_path %></h1>
 
           <nav>
             <ul>
               <% if user_signed_in? %>
-                <li><a href="#"><%= link_to "TOP", root_path %></li>
-                <li><a href="#"><%= link_to "About", about_path %></li>
-                <li><a href="#"><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
-                <li><a href="#"><%= link_to "My Page", user_path(current_user.id) %></li>
+                <li><%= link_to "TOP", root_path %></li>
+                <li><%= link_to "About", about_path %></li>
+                <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+                <li><%= link_to "My Page", user_path(current_user.id) %></li>
                 <div class="icon">
                   <%= attachment_image_tag current_user, :profile_image, fallback: "no_image.jpg", :class => "p-img" %>
                 </div>

@@ -3,7 +3,7 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   def facebook
-    callback_for (:facebook)
+    callback_for(:facebook)
   end
 
   def google_oauth2
@@ -11,7 +11,6 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   end
 
   def callback_for(provider)
-
     @omniauth = request.env['omniauth.auth']
     info = User.find_oauth(@omniauth)
     @user = info[:user]
@@ -19,8 +18,15 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       sign_in_and_redirect @user, event: :authentication
       set_flash_message(:notice, :success, kind: "#{provider}".capitalize) if is_navigational_format?
     else
+      password = Devise.friendly_token.first(7)
+      @user.password = password
       @sns = info[:sns]
-      render template: "devise/registrations/new"
+      @user.save
+      @sns.user_id= @user.id
+      @sns.save
+      #redirect_to root_path
+      sign_in_and_redirect @user, event: :authentication
+      set_flash_message(:notice, :success, kind: "#{provider}".capitalize) if is_navigational_format?
     end
   end
 
@@ -29,9 +35,6 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   end
 
 
-  #   def passthru
-  #     super
-  #   end
 
 
 

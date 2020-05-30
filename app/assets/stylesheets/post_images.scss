@@ -7,6 +7,8 @@
 // 	text-align: center;
 // }
 
+	// text-align:center
+
 .photo{
 	margin:20px;
 	padding:20px;
@@ -17,6 +19,7 @@
 
 .show_photo{
 	text-align: center;
+	margin-top:30px;
 }
 
 .title-comment{
@@ -26,4 +29,9 @@
 
 .map{
  text-align: center;
+}
+
+.date{
+	text-align :right;
+	margin-right :250px;
 }
