@@ -1,4 +1,5 @@
 class PostImagesController < ApplicationController
+  before_action :authenticate_user!, only: [:new]
 
   def new
     @post_image = PostImage.new
