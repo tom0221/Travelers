@@ -38,18 +38,6 @@ class User < ApplicationRecord
     return PostImage.where(user_id: self.id)
   end
 
-  # def self.from_omniauth(auth)
-  #   sns = SnsCredential.where(provider: auth.provider, uid: auth.uid).first_or_create
-  #   user = sns.user || User.where(email: auth.info.email,).first_or_initialize(
-  #     nick_name: auth.info.name,
-  #       email:auth.info.email
-  #   )
-  #   if user.persisted?
-  #     sns.user = user
-  #     sns.save
-  #   end
-  #   { user: user, sns: sns }
-  # end
 
   #SNS認証
   def self.without_sns_data(auth)

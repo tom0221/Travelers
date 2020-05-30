@@ -32,9 +32,10 @@
 
 
 <!-- SNSログイン第二弾 -->
-<%= link_to "Facebookでログイン", user_facebook_omniauth_authorize_path,method: :post %>
-<%= link_to "Googleでログイン", user_google_oauth2_omniauth_authorize_path,method: :post %>
+<i class="fab fa-facebook">
+  <%= link_to "Facebookでログイン", user_facebook_omniauth_authorize_path,method: :post %></i>
+<i class="fab fa-google">
+  <%= link_to "Googleでログイン", user_google_oauth2_omniauth_authorize_path,method: :post %></i>
 
-<%= render "devise/shared/links" %>
 
 </div>
