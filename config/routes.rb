@@ -28,7 +28,6 @@ Rails.application.routes.draw do
   	resources :post_comments, only: [:create, :destroy]
   end
   resources :users, only: [:create, :show, :edit, :update, :destroy] do
-    # get :search　=>  "users#collection"
   end
 
 
