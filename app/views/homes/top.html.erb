@@ -9,22 +9,29 @@
 		</div>
 	</div>
 
+	<!-- 検索機能 -->
+	<%= form_with url: users_search_path, method: :get, local: true do |f| %>
+		<%= f.text_field :name %>
+		<%= f.submit :search %>
+	<% end %>
+	<!-- ここまで検索機能 -->
+
+
 	<!-- 新着投稿写真を9枚載せる。 -->
 
 	<div class="row">
-		<div class="photos">
+		<div>
 			<% @post_images.each do |post_image| %>
-				<div>
+				<div class="photos">
 					<%= link_to post_image_path(post_image) do %>
 						<%= attachment_image_tag post_image,:image, size: "250x200" %>
-				</div>
+				<!-- </div> -->
 					<% end %>
 
-				<div>
+				<!-- <div> -->
 					Photo By <strong><%= link_to post_image.user.name, user_path(post_image.user) %></strong>
 				</div>
 			<% end %>
-
 		</div>
 	</div>
 

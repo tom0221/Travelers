@@ -21,12 +21,15 @@ Rails.application.routes.draw do
   get 'users/follower' => 'users#show_follow'
   get 'users/followed' => 'users#show_follower'
 
+  get "users/search" => "users#search"
 
   resources :post_images, only: [:new, :create, :index, :show, :edit, :destroy] do
   	resource :favorites, only: [:create, :destroy]
   	resources :post_comments, only: [:create, :destroy]
   end
-  resources :users, only: [:create, :show, :edit, :update, :destroy]
+  resources :users, only: [:create, :show, :edit, :update, :destroy] do
+    # get :search　=>  "users#collection"
+  end
 
 
 
