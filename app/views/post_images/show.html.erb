@@ -59,14 +59,14 @@
 			<% end %>
 
 
-					<div>
+					<!-- <div> -->
 					<!-- コメント投稿用フォーム -->
 					<%= form_for [@post_image, @post_comment] do |f| %>
 
 						<%= render 'layouts/error_messages', model: f.object %>
 
 								<%= f.text_area :comment, rows:'3', class: "form-control",placeholder: "コメントはここに" %>
-					</div>
+					<!-- </div> -->
 
 							<%= f.submit "送信する", class: "btn btn-success" %>
 					<% end %>
