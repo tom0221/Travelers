@@ -7,6 +7,11 @@
 // 	text-align: center;
 // }
 
+h2{
+	padding-top:20px;
+	margin-left:20px;
+}
+
 .photo{
 	margin:20px;
 	padding:20px;
@@ -32,4 +37,9 @@
 .date{
 	text-align :right;
 	margin-right :250px;
+}
+
+.username{
+	font-size: 25px;
+	font-weight:bold;
 }

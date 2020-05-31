@@ -17,7 +17,7 @@
 
 
 	<!-- 本人であれば、表示させる -->
-		<div>
+		<div class="btn btn-success">
 		  <% if @user == current_user %>
 			<%= link_to "登録内容を変更する", edit_user_path(current_user.id) %>
 		  <% end %>
@@ -25,11 +25,11 @@
 
 			<h4>ユーザー名</h4>
 			<h5><%= @user.name %></h5><br>
-			<p>投稿数　<%= @user.post_images.count %> 件</p><br>
-			<p>フォロー中人数</p>
+			<p>投稿数　<strong><%= @user.post_images.count %></strong> 件<br>
+			  フォロー中 人数<br>
 			<%= link_to @user.follower.count, users_follower_path(id:@user.id) %><br>
-			<p>フォロワー人数</p>
-			<%= link_to @user.followed.count, users_followed_path(id:@user.id) %><br>
+			  フォロワー 人数<br>
+			<%= link_to @user.followed.count, users_followed_path(id:@user.id) %></p>
 
 	<!-- 本人であれば、表示させる -->
 		　<% if @user == current_user %>
