@@ -40,28 +40,33 @@
 	<!-- コメント機能 -->
 		<h4>コメント一覧</h4>
 			<% @post_image.post_comments.each do |post_comment| %><br>
-				<div class="username">
-					<%= post_comment.user.name %>
-				</div>
-				<%= post_comment.comment %>
+				<table>
+					<tr>
+						<%= post_comment.user.name %>
+						<%= post_comment.comment %>
+					</tr>
+				<!-- </table> -->
 
 					<% if post_comment.user == current_user %>
-						<div>
-							<%= link_to "削除", post_image_post_comment_path(post_comment.post_image, post_comment), method: :delete, class: "btn btn-danger pull-right" %>
-						</div>
+						<tr>
+							<%= link_to post_image_post_comment_path(post_comment.post_image, post_comment), method: :delete do %>
+								<button type="button" class="btn btn-danger rounded-circle p-0" style="width:1.5rem;height:1.6rem;">-</button>
+							<% end %>
+						</tr>
 					<% end %>
+				</table>
 
 			<% end %>
 
 
-					<div>
+					<!-- <div> -->
 					<!-- コメント投稿用フォーム -->
 					<%= form_for [@post_image, @post_comment] do |f| %>
 
 						<%= render 'layouts/error_messages', model: f.object %>
 
 								<%= f.text_area :comment, rows:'3', class: "form-control",placeholder: "コメントはここに" %>
-					</div>
+					<!-- </div> -->
 
 							<%= f.submit "送信する", class: "btn btn-success" %>
 					<% end %>

@@ -1,5 +1,5 @@
 <div class="container">
-	<div style="text-align:center">
+	<div class="row">
 
 		<!-- 新規投稿画面 form_for使用-->
 		<%= form_for(@post_image) do |f| %>
@@ -7,19 +7,22 @@
 		<h2>NEW POST</h2>
 
 		<!-- エラーメッセージ表示テンプレート -->
-		<%= render 'layouts/error_messages', model: f.object %>
+		<div class="new-post">
+			<%= render 'layouts/error_messages', model: f.object %>
 
-			<%= f.attachment_field :image %>
+				<%= f.attachment_field :image %>
 
-			<h4>タイトル</h4>
-			<%= f.text_field :title %>
+				<h4>タイトル</h4>
+				<%= f.text_field :title %>
 
-			<h4>説明</h4>
-			<%= f.text_area :body, placeholder: 'キャプション入力' %>
+				<h4>説明</h4>
+				<%= f.text_area :body, placeholder: 'キャプション入力' %>
 
-			<%= f.submit 'シェアする' %>
+				<%= f.submit 'シェアする', class: "btn btn-primary rounded-pill" %>
 
-		<% end %>
+
+			<% end %>
+		</div>
 
 	</div>
 </div>
