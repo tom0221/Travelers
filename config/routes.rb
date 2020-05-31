@@ -26,7 +26,9 @@ Rails.application.routes.draw do
   	resource :favorites, only: [:create, :destroy]
   	resources :post_comments, only: [:create, :destroy]
   end
-  resources :users, only: [:create, :show, :edit, :update, :destroy]
+  resources :users, only: [:create, :show, :edit, :update, :destroy] do
+    get :search, on: :collectiona#検索機能
+  end
 
 
 

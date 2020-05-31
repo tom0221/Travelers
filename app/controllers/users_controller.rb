@@ -43,6 +43,14 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def search#検索機能
+    if params[:name].present?
+      @users = User.where('name LIKE ?', "%#{params[:name]}%")
+    else
+      @users = User.none
+    end
+  end
+
   private#以下変更を許可する
   def user_params
   	params.require(:user).permit(:name, :email, :password, :profile_image)
