@@ -8,18 +8,22 @@
 
 		<!-- エラーメッセージ表示テンプレート -->
 		<div class="new-post">
+
 			<%= render 'layouts/error_messages', model: f.object %>
 
-				<%= f.attachment_field :image %>
+				<div class="form-group">
+					<%= f.attachment_field :image %>
 
-				<h4>タイトル</h4>
-				<%= f.text_field :title %>
+					<h5>タイトル</h5>
 
-				<h4>説明</h4>
-				<%= f.text_area :body, placeholder: 'キャプション入力' %>
+					<input type="title" name="post_image[title]"class="form-control">
 
-				<%= f.submit 'シェアする', class: "btn btn-primary rounded-pill" %>
+					<h5>説明</h5>
 
+					<input type="body" class="form-control" name="post_image[body]" placeholder="キャプション入力" >
+
+					<%= f.submit 'シェアする', class: "btn btn-primary rounded-pill" %>
+				</div>
 
 			<% end %>
 		</div>

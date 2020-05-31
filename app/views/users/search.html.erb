@@ -1,16 +1,20 @@
-	<table>
-		<thead>
+<div class="results">
+	<!-- 本当は真ん中に配置したい -->
+	<h2>- results -</h2>
+		<table class="results">
 			<tr>
-				<th>Name</th>
+				<th class="profile_image_id">image</th>
+				<th class="title">Name</th>
 			</tr>
-		</thead>
-		<tbody>
-			<% @users.each do |user| %>
-				<tr>
-					<td><%= link_to user_path(user.id) do %>
-						<%= user.name %></td>
-						<% end %>
-				</tr>
-			<% end %>
-		</tbody>
-	</table>
+		<% @users.each do |user| %>
+			<tr>
+				<!-- 本当はリンク先にしたいが、反応しない。 -->
+				<%= link_to user_path(user.id) do %>
+					<td><%= attachment_image_tag user, :profile_image, fallback: "no_image.jpg", size:'40x40' %></td>
+					<td><%= user.name %></td>
+				<% end %>
+			</tr>
+		<% end %>
+		</table>
+
+</div>
