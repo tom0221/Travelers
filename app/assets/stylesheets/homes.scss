@@ -4,8 +4,17 @@
 
 .photos{
 	// float:left;
-	text-align: center;
+	// margin:0 auto;
+	// text-align: center;
 	// border: solid;
+	display: flex;
+	flex-wrap:wrap;
+	// justify-content:flex-center;
+	justify-content: space-between;
+	width: 33%;
+	// display: block;
+	background-color:limegreen;
+	border: 10px solid white;
 }
 
 .new{

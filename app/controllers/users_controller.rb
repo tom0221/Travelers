@@ -43,7 +43,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-  def search#検索機能
+  def search
     if params[:name].present?
       @users = User.where('name LIKE ?', "%#{params[:name]}%")
     else
