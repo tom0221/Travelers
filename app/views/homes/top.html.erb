@@ -1,14 +1,12 @@
 <div class="container">
 	<div class="row">
-
-			<h2>NEW POST！</h2>
-
-			<div class="new">
-				<button type="button" class="btn btn-warning">
-					<i class="fas fa-pen-square">
-					<%= link_to "新規投稿", new_post_image_path %></i>
-				</button>
-			</div>
+		<div class="new">NEW POST！
+		<!-- <div class="new"> -->
+			<button type="button" class="btn btn-warning">
+				<i class="fas fa-pen-square">
+				<%= link_to "新規投稿", new_post_image_path %></i>
+			</button>
+		</div>
 	</div>
 
 	<!-- 新着投稿写真を9枚載せる。 -->
@@ -16,15 +14,14 @@
 	<div class="row">
 		<div class="photos">
 			<% @post_images.each do |post_image| %>
-
 			  <!-- <div class="photos"> -->
-					<%= link_to post_image_path(post_image) do %>
-						<%= attachment_image_tag post_image,:image, size: "250x200" %>
-					<% end %>
-
-					    Photo By <strong><%= link_to post_image.user.name, user_path(post_image.user) %></strong>
-
+				<%= link_to post_image_path(post_image) do %>
+					<%= attachment_image_tag post_image,:image, size: "250x200" %>
+				<% end %>
+<!-- 		  <div> -->
+				    Photo By <strong><%= link_to post_image.user.name, user_path(post_image.user) %></strong>
 			<% end %>
+
 		</div>
 	</div>
 
