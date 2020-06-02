@@ -3,17 +3,16 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .photos{
-	// float:left;
+	float:left;
 	// margin:0 auto;
-	// text-align: center;
 	// border: solid;
 	display: flex;
 	flex-wrap:wrap;
-	// justify-content:flex-center;
+	justify-content:flex-center;
 	justify-content: space-between;
 	width: 33%;
 	// display: block;
-	background-color:limegreen;
+	// background-color:limegreen;
 	border: 10px solid white;
 }
 
