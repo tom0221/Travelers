@@ -1,35 +1,42 @@
-<h2>新規ユーザー登録</h2>
+<div style="text-align:center">
+  <h2>新規ユーザー登録</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= render 'layouts/error_messages', model: f.object %>
 
-  <div class="field">
-    <%= f.label :Eメールアドレス %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+    <div class="field">
+      <%= f.label :Eメールアドレス %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :ユーザー名 %><br />
-    <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
-  </div>
+    <div class="field">
+      <%= f.label :ユーザー名 %><br />
+      <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :パスワード %>
-    <% if @minimum_password_length %>
-    <em>(最低 <%= @minimum_password_length %>文字以上)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
+    <div class="field">
+      <%= f.label :パスワード %>
+      <% if @minimum_password_length %>
+      <em>(最低 <%= @minimum_password_length %>文字以上)</em>
+      <% end %><br />
+      <%= f.password_field :password, autocomplete: "new-password" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :パスワード再入力 %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+    <div class="field">
+      <%= f.label :パスワード再入力 %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    </div>
 
-  <div class="actions">
-    <%= f.submit "新規登録" %>
-  </div>
-<% end %>
+    <div class="actions">
+      <%= f.submit "新規登録" %>
+    </div>
+  <% end %>
+<!-- SNSログイン第二弾 -->
+<i class="fab fa-facebook">
+  <%= link_to "Facebookでログイン", user_facebook_omniauth_authorize_path,method: :post %></i>
+<i class="fab fa-google">
+  <%= link_to "Googleでログイン", user_google_oauth2_omniauth_authorize_path,method: :post %></i>
 
-<%= render "devise/shared/links" %>
+  <%#= render "devise/shared/links" %>
+</div>
 

@@ -1,5 +1,5 @@
 class PostImagesController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, only: [:new]
 
   def new
     @post_image = PostImage.new
@@ -12,8 +12,13 @@ class PostImagesController < ApplicationController
   def create
   	@post_image = PostImage.new(post_image_params)
   	@post_image.user_id = current_user.id
-  	@post_image.save
-  	redirect_to root_path
+    #条件分岐
+  	if @post_image.save
+      flash[:notice] = "投稿完了しました！"
+  	 redirect_to root_path
+    else
+      render :new
+    end
   end
 
   def show

@@ -1,0 +1,2 @@
+//部分的に更新する記述
+$('#favorites_buttons_<%= @post_image.id %>').html("<%= j(render partial: 'favorites/favorite', locals: { post_image: @post_image }) %>");

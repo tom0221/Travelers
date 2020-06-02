@@ -2,19 +2,95 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+// *{
+// 	text-align: center;
+// }
+
+h2{
+	padding-top:20px;
+	margin-left:20px;
+}
+
 .photo{
 	margin:20px;
-	padding:30px;
+	padding:20px;
 	width:300px;
-	height: 250px;
+	// height: 250px;
 	float:left;
 }
 
 .show_photo{
 	text-align: center;
+	margin-top:30px;
 }
 
 .title-comment{
 	margin-top:60px;
 	margin-left:270px;
+}
+
+.map{
+ text-align: center;
+}
+
+.date{
+	text-align :right;
+	margin-right :250px;
+}
+
+.username{
+	font-size: 25px;
+	font-weight:bold;
+}
+
+.new-post{
+	text-align: center;
+	margin:o auto;
+}
+
+input[type="title"] {
+    width: 200px;
+    height: 30px;
+}
+
+input[type="body"] {
+    width: 250px;
+    height: 50px;
+}
+
+
+//js上に戻るボタン追加
+#page_top{
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  background: #3f98ef;
+  opacity: 0.8;
+  border-radius: 50%;
+}
+#page_top a{
+  position: relative;
+  display: block;
+  width: 50px;
+  height: 50px;
+  text-decoration: none;
+}
+#page_top a::before{
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  content: '\f102';
+  font-size: 25px;
+  color: #fff;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: -10px;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  text-align: center;
 }

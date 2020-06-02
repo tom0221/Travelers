@@ -1,16 +1,21 @@
-<h2>ユーザーログイン</h2>
+<div style="text-align:center">
 
-  <h4>メールアドレスとパスワードを入力してください。</h4>
+  <h2>登録済みの方はこちらから</h2>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <!-- <h4>メールアドレスとパスワードを入力してください。</h4> -->
+
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+  <%= render 'layouts/error_messages', model: f.object %>
+
   <div class="field">
-    <%= f.label :Eメールアドレス %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'メールアドレス'  %>
   </div>
 
+　<br>
+
   <div class="field">
-    <%= f.label :パスワード %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
+    <%= f.password_field :password, autocomplete: "current-password" , placeholder: 'パスワード' %>
   </div>
 
   <% if devise_mapping.rememberable? %>
@@ -25,4 +30,12 @@
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+
+<!-- SNSログイン第二弾 -->
+<i class="fab fa-facebook">
+  <%= link_to "Facebookでログイン", user_facebook_omniauth_authorize_path,method: :post %></i>
+<i class="fab fa-google">
+  <%= link_to "Googleでログイン", user_google_oauth2_omniauth_authorize_path,method: :post %></i>
+
+
+</div>

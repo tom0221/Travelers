@@ -3,10 +3,38 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .photos{
-	float:left;
-	text-align: center;
+	// float:left;
+	// margin:0 auto;
+	// text-align: center;
+	// border: solid;
+	display: flex;
+	flex-wrap:wrap;
+	// justify-content:flex-center;
+	justify-content: space-between;
+	width: 33%;
+	// display: block;
+	background-color:limegreen;
+	border: 10px solid white;
 }
 
 .new{
 	text-align: center;
+	font-size:30px;
+}
+
+.about{
+	margin:30px;
+	text-align:center;
+}
+
+.row{
+	margin-top:40px;
+}
+
+.test{
+	float:left;
+}
+
+.form{
+	text-align:right;
 }
