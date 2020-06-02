@@ -3,7 +3,7 @@
 		<div class="show_photo">
 			<%= attachment_image_tag @post_image, :image, format: 'jpeg', size: "600x400" %>
 		</div>
-	
+
 
 
 		<div class="title-comment">
@@ -12,8 +12,10 @@
 		<!-- </div> -->
 
 			<div>
-				By <%= @post_image.user.name %>
-			<!-- </div> --><!-- 投稿したユーザー名表示予定 -->
+				By <%= link_to @post_image.user.name, user_path(@post_image.user) %>
+				   		
+
+			<!-- </div> -->
 				<div class="date"> <%= @post_image.created_at.strftime('%Y/%m/%d') %>
 				</div><!-- 日付表示予定 -->
 			</div>
