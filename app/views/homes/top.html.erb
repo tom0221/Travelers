@@ -13,8 +13,13 @@
 	<div class="form">
 		<%= form_with url: users_search_path, method: :get, local: true do |f| %>
 			<%= f.text_field :name %>
-			<%= f.submit :検索 %>
-			<input type="submit" value="&#xf002; 検索" class="fas">
+			<%= f.submit "検索" %>
+			<button type="submit">
+			  <i class="fas fa-search"></i> 検索
+			</button>
+
+
+
 		<% end %>
 	</div>
 	<!-- ここまで検索機能 -->

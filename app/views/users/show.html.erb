@@ -17,11 +17,11 @@
 
 
 	<!-- 本人であれば、表示させる -->
-		<div class="btn btn-success">
-		  <% if @user == current_user %>
-			<%= link_to "登録内容を変更する", edit_user_path(current_user.id) %>
-		  <% end %>
-		</div>
+		<% if @user == current_user %>
+			<div class="btn btn-success">
+				<%= link_to "登録内容を変更する", edit_user_path(current_user.id) %>
+			</div>
+		<% end %>
 
 			<h4>ユーザー名</h4>
 			<h5><%= @user.name %></h5><br>
