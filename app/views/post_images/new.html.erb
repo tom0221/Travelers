@@ -1,32 +1,34 @@
-<div class="container">
-	<div class="row">
+<div style="text-align:center">
+	<div class="container">
+		<div class="row">
 
-		<!-- 新規投稿画面 form_for使用-->
-		<%= form_for(@post_image) do |f| %>
+				<!-- 新規投稿画面 form_for使用-->
+				<%= form_for(@post_image) do |f| %>
 
-		<h2>NEW POST</h2>
+				<h2>NEW POST</h2>
 
-		<!-- エラーメッセージ表示テンプレート -->
-		<div class="new-post">
+				<!-- エラーメッセージ表示テンプレート -->
+				<div class="new-post">
 
-			<%= render 'layouts/error_messages', model: f.object %>
+					<%= render 'layouts/error_messages', model: f.object %>
 
-				<div class="form-group">
-					<%= f.attachment_field :image %>
+						<div class="form-group">
+							<%= f.attachment_field :image %>
 
-					<h5>タイトル</h5>
+							<h5>タイトル</h5>
 
-					<input type="title" name="post_image[title]"class="form-control">
+							<input type="title" name="post_image[title]"class="form-control">
 
-					<h5>説明</h5>
+							<h5>説明</h5>
 
-					<input type="body" class="form-control" name="post_image[body]" placeholder="キャプション入力" >
+							<input type="body" class="form-control" name="post_image[body]" placeholder="キャプション入力" >
 
-					<%= f.submit 'シェアする', class: "btn btn-primary rounded-pill" %>
+							<%= f.submit 'シェアする', class: "btn btn-primary rounded-pill" %>
+						</div>
+
+					<% end %>
 				</div>
-
-			<% end %>
+			
 		</div>
-
 	</div>
 </div>

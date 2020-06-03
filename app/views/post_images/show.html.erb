@@ -1,7 +1,7 @@
 <!-- ヘッダー部分 -->
 <div class="container">
 		<div class="show_photo">
-			<%= attachment_image_tag @post_image, :image, format: 'jpeg', size: "600x400" %>
+			<%= attachment_image_tag @post_image, :image, format: 'jpeg', width: "40%" %>
 		</div>
 
 
@@ -13,7 +13,7 @@
 
 			<div>
 				By <%= link_to @post_image.user.name, user_path(@post_image.user) %>
-				   		
+
 
 			<!-- </div> -->
 				<div class="date"> <%= @post_image.created_at.strftime('%Y/%m/%d') %>
