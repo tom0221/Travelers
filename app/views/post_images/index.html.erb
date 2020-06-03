@@ -1,27 +1,33 @@
 <div class="container">
 	<h2>ー Photo Gallery ー</h2>
 	<!-- each文で繰り返し表示させる！ -->
-	<% @post_images.each do |post_image| %>
 
 		<div class="photo">
-			<%= link_to post_image_path(post_image.id) do %>
-				<%= attachment_image_tag post_image, :image, size: "290x290"  %>
-			<br>
-				Photo by <%= post_image.user.name %>
-			<!-- indexにコメント数を追加した。 -->
-				<%= link_to "#{post_image.post_comments.count} コメント", post_image_path(post_image.id) %>
+			<% @post_images.each do |post_image| %>
+				<div class= "photo2">
+					<%= link_to post_image_path(post_image.id) do %>
+						<%= attachment_image_tag post_image, :image, size: "290x290" %>
+				<br>
+					<% end %>
+						Photo by <%= link_to post_image.user.name, user_path(post_image.user_id) %>
+
+						<%= link_to "#{post_image.post_comments.count} コメント", post_image_path(post_image.id) %>
+				</div>
 			<% end %>
 		</div>
-	<% end %>
 
 	<div class="row">
 		<%= paginate @post_images %>
 	</div>
 
 	<!-- JS戻るボタン追加 -->
-	<div id="page_top"><a href="#"></a></div>
+	<div id="page_top">
+		<a href="#"></a></div>
 
 
+<!-- 	<span id="back">
+      <a href="#"></a>
+    </span> -->
 </div>
 
 

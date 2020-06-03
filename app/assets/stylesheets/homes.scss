@@ -4,17 +4,15 @@
 
 
 .photos{
-	float:left;
+	// float:left;
 	// margin:0 auto;
 	// border: solid;
 	display: flex;
-	flex-wrap:wrap;
-	justify-content:flex-center;
-	justify-content: space-between;
-	width: 33%;
-	// display: block;
+	// flex-wrap: wrap;
+	// justify-content:flex-center;
+	// justify-content: space-between;
 	// background-color:limegreen;
-	border: 10px solid black;
+	// border: 10px solid black;
 }
 
 .new{
@@ -28,7 +26,7 @@
 }
 
 .row{
-	margin-top:20px;
+	margin-top:40px;
 }
 
 .test{
