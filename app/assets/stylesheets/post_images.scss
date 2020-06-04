@@ -14,11 +14,8 @@ h2{
 
 //親要素photoに入れ子構造
 .photo{
-	// margin-top:20px;
 	padding:20px;
-	// width:300px;
   width:100%;
-	// height: 250px;
 	float:left;
   column-count: 3;
   column-width:100%;
@@ -36,6 +33,10 @@ h2{
 }
 //入れ子ここまで
 
+
+.index{
+  margin-top:30px;
+}
 
 //post-image#show
 //show-photoはattachmentと同じdiv
@@ -91,7 +92,6 @@ textarea {
 .form-group{
   text-align: center;
 }
-
 
 
 //post_images#new 投稿フォーム
