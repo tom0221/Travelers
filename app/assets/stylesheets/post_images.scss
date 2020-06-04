@@ -60,8 +60,16 @@ h2{
 
 .date{
 	text-align :right;
-	margin-right :250px;
+	margin-right :330px;
 }
+
+textarea {
+    max-width: 500px;
+    clear: both;
+}
+// .form-control {
+//   width:60%;
+// }
 
 // .comment-index{
 //   font-size:40px;
