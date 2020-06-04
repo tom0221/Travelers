@@ -1,7 +1,6 @@
 <div style="text-align:center">
 	<div class="container">
 		<div class="row">
-
 				<!-- 新規投稿画面 form_for使用-->
 				<%= form_for(@post_image) do |f| %>
 
@@ -17,18 +16,17 @@
 
 							<h5>タイトル</h5>
 
-							<input type="title" name="post_image[title]"class="form-control">
+								<input type="title" name="post_image[title]"class="form-control">
 
 							<h5>説明</h5>
 
-							<input type="body" class="form-control" name="post_image[body]" placeholder="キャプション入力" >
+								<input type="body" class="form-control" name="post_image[body]" placeholder="キャプション入力" >
 
-							<%= f.submit 'シェアする', class: "btn btn-primary rounded-pill" %>
+								<%= f.submit 'シェアする', class: "btn btn-primary rounded-pill" %>
 						</div>
 
 					<% end %>
 				</div>
-			
 		</div>
 	</div>
 </div>

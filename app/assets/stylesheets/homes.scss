@@ -3,9 +3,25 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+//homes#top
+.row{
+	margin-top:40px;
+}
+
+.new{
+	text-align: center;
+	font-size:30px;
+}
+
+
+.form{
+	text-align:right;
+}
+
+
+//これいる？スペル怪しい。反映されないなら削除する。
 .photos{
 	// float:left;
-	// margin:0 auto;
 	// border: solid;
 	display: flex;
 	// flex-wrap: wrap;
@@ -15,24 +31,9 @@
 	// border: 10px solid black;
 }
 
-.new{
-	text-align: center;
-	font-size:30px;
-}
 
+//homes#about
 .about{
 	margin:30px;
 	text-align:center;
-}
-
-.row{
-	margin-top:40px;
-}
-
-.test{
-	float:left;
-}
-
-.form{
-	text-align:right;
 }

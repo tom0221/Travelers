@@ -6,7 +6,7 @@ class PostImagesController < ApplicationController
   end
 
   def index
-    @post_images = PostImage.page(params[:page]).per(12).order("created_at DESC")#12枚表示
+    @post_images = PostImage.page(params[:page]).per(12).order("created_at DESC")#現状12枚表示
   end
 
   def create

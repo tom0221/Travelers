@@ -1,7 +1,8 @@
+<!-- 要インデント確認 -->
 <div class="container">
 	<h2>ー Photo Gallery ー</h2>
-	<!-- each文で繰り返し表示させる！ -->
 
+	<!-- each文で繰り返し表示 -->
 		<div class="photo">
 			<% @post_images.each do |post_image| %>
 				<div class= "photo2">
@@ -20,14 +21,10 @@
 		<%= paginate @post_images %>
 	</div>
 
-	<!-- JS戻るボタン追加 -->
+	<!-- 右下JS戻るボタン追加 -->
 	<div id="page_top">
 		<a href="#"></a></div>
 
-
-<!-- 	<span id="back">
-      <a href="#"></a>
-    </span> -->
 </div>
 
 
