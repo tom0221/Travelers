@@ -12,6 +12,7 @@ h2{
 	margin-left:20px;
 }
 
+//親要素photoに入れ子構造
 .photo{
 	// margin-top:20px;
 	padding:20px;
@@ -21,7 +22,6 @@ h2{
 	float:left;
   column-count: 3;
   column-width:100%;
-
 
 .attachment{
   width: 100%;
@@ -33,11 +33,12 @@ h2{
   display: inline-block;
   padding-top: 50%;
 }
-
 }
+//入れ子ここまで
 
 
-
+//post-image#show
+//show-photoはattachmentと同じdiv
 .show_photo{
 	text-align: center;
 	margin-top:30px;
@@ -49,7 +50,7 @@ h2{
 }
 
 .title-comment{
-	margin-top:60px;
+	margin-top:20px;
 	margin-left:270px;
 }
 
@@ -61,6 +62,12 @@ h2{
 	text-align :right;
 	margin-right :250px;
 }
+
+// .comment-index{
+//   font-size:40px;
+// }
+
+//ここまでpost_images#show
 
 .username{
 	font-size: 25px;
@@ -91,7 +98,7 @@ input[type="body"] {
 }
 
 
-//js上に戻るボタン追加
+//index/js上に戻るボタン追加
 #page_top{
   width: 50px;
   height: 50px;

@@ -1,7 +1,6 @@
 <div class="container">
 	<div class="row">
 		<div class="new">NEW POST！
-		<!-- <div class="new"> -->
 			<button type="button" class="btn btn-warning">
 				<i class="fas fa-pen-square">
 				<%= link_to "新規投稿", new_post_image_path %></i>
@@ -14,40 +13,28 @@
 		<%= form_with url: users_search_path, method: :get, local: true do |f| %>
 			<%= f.text_field :name %>
 			<%= f.submit "検索" %>
-
-
 		<% end %>
 	</div>
 	<!-- ここまで検索機能 -->
 
 
-	<!-- 新着投稿写真を9枚載せる。 -->
+	<!-- 新着投稿写真を6枚載せる。 -->
 
-	<!-- <div class="row"> -->
-		<div class="photo">
-			<% @post_images.each do |post_image| %>
+	<div class="photo">
+		<% @post_images.each do |post_image| %>
 			<div class= "photo2">
 				<%= link_to post_image_path(post_image.id) do %>
 					<%= attachment_image_tag post_image, :image, size: "290x290" %>
-				<br>
 				<% end %>
+			<br>
 					Photo by <%= link_to post_image.user.name, user_path(post_image.user_id) %>
 			</div>
+		<% end %>
 
-			<% end %>
-			
-				<div style="text-align:right">
-					<%= link_to "もっと見る", post_images_path %>
-				</div>
 
+		<div style="text-align:right">
+			<%= link_to "もっと見る", post_images_path %>
 		</div>
-	<!-- </div> -->
-
-
-
+	</div>
 	<br>
-
-	
-
-
 </div>
