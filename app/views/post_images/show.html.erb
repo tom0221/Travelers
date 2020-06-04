@@ -7,18 +7,18 @@
 
 
 	<div class="title-comment">
-		<h4><%= @post_image.title %></h4>
-		<h5><%= @post_image.body %></h5>
+		<h4><strong><%= @post_image.title %></strong></h4>
+					<%= @post_image.body %>
 
-		<div>
-			By <%= link_to @post_image.user.name, user_path(@post_image.user) %>
+		<div class="date">
+			By <%= link_to @post_image.user.name, user_path(@post_image.user) %><br>
 
-			<div class="date"> <%= @post_image.created_at.strftime('%Y/%m/%d') %></div>
+			   <%= @post_image.created_at.strftime('%Y/%m/%d') %>
 		</div>
 	</div>
 
 	<!-- 戻る・削除ボタンはコメントの右に配置したい？ -->
-	<div style="text-align:center">
+	<div style="text-align:center;">
 		<td align="right">
 			<% if @post_image.user == current_user %>
 				<%= link_to "削除", post_image_path(@post_image.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
@@ -57,14 +57,16 @@
 
 
 		<!-- コメント投稿用フォーム -->
-		<%= form_for [@post_image, @post_comment] do |f| %>
+		<!-- <div class="col-xs-4"> -->
+			<%= form_for [@post_image, @post_comment] do |f| %>
 
-			<%= render 'layouts/error_messages', model: f.object %>
+				<%= render 'layouts/error_messages', model: f.object %>
 
-			<%= f.text_area :comment, rows:'3', class: "form-control",placeholder: "コメントはここに" %>
-			<%= f.submit "送信する", class: "btn btn-success" %>
+				<%= f.text_area :comment, rows:'3', class: "form-control",placeholder: "コメントはここに" %>
+				<%= f.submit "送信する", class: "btn btn-success" %>
 
-		<% end %>
+			<% end %>
+		<!-- </div> -->
 	</div>
 </div>
 
