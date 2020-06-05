@@ -45,7 +45,6 @@
       </div>
     </header>
 
-
   <!-- ログインエラー時のflashメッセージ -->
       <% if flash[:alert] %>
         <div class="alert">
@@ -54,6 +53,8 @@
       <% end %>
 
   <!-- flashサクセスメッセージ  -->
+      <br>
+      <br>
       <% if flash[:notice] %>
         <div class="flash">
           <%= flash[:notice] %>

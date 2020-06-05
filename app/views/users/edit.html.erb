@@ -1,16 +1,11 @@
 <div class="container">
   <div style="text-align:center">
 
-  <% if @user.errors.any? %>
-    <div class="error">
-      <h3><%= @user.errors.count %>件　不足項目があります</h3>
-    </div>
-  <% end %>
-
-
 	<h3>ユーザー編集</h3>
 
 	  <%= form_for(@user) do |f| %>
+
+	  	<%= render 'layouts/error_messages', model: f.object %>
 
 		<h4>イメージ選択</h4>
 		<%= f.attachment_field :profile_image %>
