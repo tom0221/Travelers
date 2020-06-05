@@ -39,7 +39,8 @@ body {
    padding: 0;
    // font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", メイリオ, Meiryo, "ＭＳ Ｐゴシック", "Helvetica Neue", Helvetica, Arial, sans-serif;
    font-family: 'ヒラギノ丸ゴ ProN','Hiragino Maru Gothic ProN',sans-serif;
-   background-color: #fff2db;
+   // background-color: #fff2db;
+   background-color: #ffffe5;
    // opacity: 0.9;
    // background-image: image-url("hawaii.jpg");
    background-size: cover;
@@ -68,20 +69,22 @@ li {
 header{
 	top: 0;
 	width:100%;
-	background-color:#757573;
+  // background-color: #ffffea;
+	background-color:#ffe8df;
+  // background-color:#ffe0ef;
   opacity: 0.95;
 	height:110px;
 	align-items: center;
 }
 
-h1 {
-   margin: 0; padding: 0;
-   text-decoration: none;
-   font-size: 35px;
-  a{
-   color: #191970;
-  }
-}
+// h1 {
+//    margin: 0; padding: 0;
+//    text-decoration: none;
+//    font-size: 35px;
+//   a{
+//    color: #191970;
+//   }
+// }
 
 //文章全体に反映
 a {
@@ -119,4 +122,17 @@ a {
 //画像の縦横比
 .attachment{
   object-fit:cover;
+}
+
+footer{
+  width:100%;
+  height:35px;
+  background-color:#f0f0f0;
+  text-align: center;
+}
+
+.clearfix::after{
+  content:"";
+  display: block;
+  clear:both;
 }

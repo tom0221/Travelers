@@ -5,7 +5,6 @@
 	</div>
 
 
-
 	<div class="title-comment">
 		<h4><strong><%= @post_image.title %></strong></h4>
 					<%= @post_image.body %>
@@ -17,16 +16,13 @@
 		</div>
 	</div>
 
-	<!-- 戻る・削除ボタンはコメントの右に配置したい？ -->
 	<div style="text-align:center;">
-		<td align="right">
+		<!-- 戻る・削除ボタン -->
 			<% if @post_image.user == current_user %>
 				<%= link_to "削除", post_image_path(@post_image.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
 			<% end %>
 
 			<%= link_to "戻る", post_images_path %><br>
-		</td>
-
 
 
 		<!-- いいね機能部分テンプレート -->
@@ -34,39 +30,39 @@
 			<%= render partial: 'favorites/favorite', locals: { post_images: @post_images} %>
 		</div>
 
-<!-- コメント機能 -->
-	<h4>コメント一覧</h4>
-		<% @post_image.post_comments.each do |post_comment| %><br>
-			<table class="comment-index">
-				<tr>
-					<%= post_comment.user.name %>
-					<%= post_comment.comment %>
-				</tr>
-
-<!-- 本人であれば削除できるif文 -->
-				<% if post_comment.user == current_user %>
+		<!-- コメント機能 -->
+		<h4>コメント一覧</h4>
+			<% @post_image.post_comments.each do |post_comment| %><br>
+				<table class="comment-index">
 					<tr>
-						<%= link_to post_image_post_comment_path(post_comment.post_image, post_comment), method: :delete do %>
-							<button type="button" class="btn btn-danger rounded-circle p-0" style="width:1.5rem;height:1.6rem;">-</button>
-						<% end %>
+						<%= post_comment.user.name %>
+						<%= post_comment.comment %>
 					</tr>
-				<% end %>
-			</table>
-		<% end %>
+
+					<!-- 本人であれば削除できるif文 -->
+					<% if post_comment.user == current_user %>
+						<tr>
+							<%= link_to post_image_post_comment_path(post_comment.post_image, post_comment), method: :delete do %>
+								<button type="button" class="btn btn-danger rounded-circle p-0" style="width:1.5rem;height:1.6rem;">-</button>
+							<% end %>
+						</tr>
+					<% end %>
+				</table>
+			<% end %>
 
 
 
 		<!-- コメント投稿用フォーム -->
-		<!-- <div class="col-xs-4"> -->
-			<%= form_for [@post_image, @post_comment] do |f| %>
+		<%= form_for [@post_image, @post_comment] do |f| %>
 
-				<%= render 'layouts/error_messages', model: f.object %>
+			<%= render 'layouts/error_messages', model: f.object %>
+		<div class="textarea">
+			<%= f.text_area :comment, rows:'3', class: "form-control",placeholder: "コメントはここに" %></div>
+			<br>
+		<div>
+			<%= f.submit "送信する", class: "btn btn-success" %></div>
 
-				<%= f.text_area :comment, rows:'3', class: "form-control",placeholder: "コメントはここに" %>
-				<%= f.submit "送信する", class: "btn btn-success" %>
-
-			<% end %>
-		<!-- </div> -->
+		<% end %>
 	</div>
 </div>
 
