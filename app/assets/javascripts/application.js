@@ -19,7 +19,7 @@
 //= require_tree .
 
 
-
+//post_images#index右下ボタン
 $(function() {
 
   $('#page_top a').on('click',function(){
@@ -30,3 +30,4 @@ $(function() {
   });
 
 });
+

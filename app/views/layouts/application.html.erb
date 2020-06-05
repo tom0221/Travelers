@@ -23,7 +23,7 @@
 
           <nav>
             <ul>
-                <li class="logo"><%= image_tag('logo.png') %></li>
+                <div class="logo"><%= image_tag('logo.png') %></div>
 
               <% if user_signed_in? %>
                 <li class="nav"><%= link_to "TOP", root_path %></li>
@@ -62,6 +62,10 @@
       <% end %>
 
     <%= yield %>
+
+  <footer>
+    <p>© ALL rights reserved by Travelers.Inc.</p>
+  </footer>
 
   </body>
 </html>

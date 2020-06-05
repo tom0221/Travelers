@@ -3,10 +3,6 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-// *{
-// 	text-align: center;
-// }
-
 h2{
 	padding-top:20px;
 	margin-left:20px;
@@ -21,7 +17,6 @@ h2{
   column-width:100%;
 
 .attachment{
-  width: 100%;
   object-fit:cover;
 }
 
@@ -34,9 +29,14 @@ h2{
 //入れ子ここまで
 
 
-.index{
-  margin-top:30px;
+//post_images#index項目
+
+.index-page{
+  margin-right: 1000px;
+  font-size:30px;
 }
+
+
 
 //post-image#show
 //show-photoはattachmentと同じdiv
@@ -61,21 +61,13 @@ h2{
 
 .date{
 	text-align :right;
-	margin-right :330px;
+	margin-right :280px;
 }
 
 textarea {
     max-width: 500px;
     clear: both;
 }
-// .form-control {
-//   width:60%;
-// }
-
-// .comment-index{
-//   font-size:40px;
-// }
-
 //ここまでpost_images#show
 
 .username{
@@ -89,8 +81,9 @@ textarea {
 	margin:0 auto;
 }
 
-.form-group{
-  text-align: center;
+
+.form-control{
+  margin:0 auto;
 }
 
 
