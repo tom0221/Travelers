@@ -19,26 +19,23 @@
   <body>
   <!-- ナビゲーションバー -->
     <header class="header">
-      <!-- <div class="header-menu"> -->
-          <%= image_tag 'logo.png', class: "logo" %>
-          <!-- <nav> -->
-            <ul>
-              <% if user_signed_in? %>
-                <li class="nav"><%= link_to "TOP", root_path %></li>
-                <li class="nav"><%= link_to "About", about_path %></li>
-                <li class="nav"><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
-                <li class="nav"><%= link_to "My Page", user_path(current_user.id) %></li>
-                <li class="icon">
-                  <%= attachment_image_tag current_user, :profile_image, fallback: "no_image.jpg", :class => "p-img" %>
-                </li>
-              <% else %>
-                <li class="nav"><%= link_to "TOP", root_path %></li>
-                <li class="nav"><%= link_to "About", about_path %></li>
-                <li class="nav"><%= link_to "Login", new_user_session_path %></li>
-                <li class="nav"><%= link_to "Sign up", new_user_registration_path %></li>
-              <% end %>
-            </ul>
-          <!-- </nav> -->
+      <%= image_tag 'logo.png', class: "logo" %>
+        <ul>
+          <% if user_signed_in? %>
+            <li class="nav"><%= link_to "TOP", root_path %></li>
+            <li class="nav"><%= link_to "About", about_path %></li>
+            <li class="nav"><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+            <li class="nav"><%= link_to "My Page", user_path(current_user.id) %></li>
+            <li class="icon">
+              <%= attachment_image_tag current_user, :profile_image, fallback: "no_image.jpg", :class => "p-img" %>
+            </li>
+          <% else %>
+            <li class="nav"><%= link_to "TOP", root_path %></li>
+            <li class="nav"><%= link_to "About", about_path %></li>
+            <li class="nav"><%= link_to "Login", new_user_session_path %></li>
+            <li class="nav"><%= link_to "Sign up", new_user_registration_path %></li>
+          <% end %>
+        </ul>
     </header>
 
   <!-- ログインエラー時のflashメッセージ -->
