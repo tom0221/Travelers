@@ -1,7 +1,7 @@
 <h1 class="follow_page">フォロー中 一覧</h1>
 
 	<% @user.following_user.each do |user| %>
-		<table>
+		<table class="follow_page">
 		<tr>
 		  <td>  <%= attachment_image_tag user, :profile_image, fallback: "no_image.jpg", size: "80x80" %></td>
 

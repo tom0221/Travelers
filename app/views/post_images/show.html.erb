@@ -33,13 +33,13 @@
 		<!-- コメント機能 -->
 		<h4>コメント一覧</h4>
 			<% @post_image.post_comments.each do |post_comment| %><br>
-				<table class="comment-index">
+				<table>
 					<tr>
 						<%= post_comment.user.name %>
 						<%= post_comment.comment %>
 					</tr>
 
-					<!-- 本人であれば削除できるif文 -->
+		<!-- 本人であれば削除できるif文 -->
 					<% if post_comment.user == current_user %>
 						<tr>
 							<%= link_to post_image_post_comment_path(post_comment.post_image, post_comment), method: :delete do %>
