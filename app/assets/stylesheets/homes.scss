@@ -20,17 +20,18 @@
 }
 
 
-//これいる？スペル怪しい。反映されないなら削除する。
-.photos{
-	// float:left;
-	// border: solid;
-	display: flex;
-	// flex-wrap: wrap;
-	// justify-content:flex-center;
-	// justify-content: space-between;
-	// background-color:limegreen;
-	// border: 10px solid black;
+
+//いるか微妙。。
+.photo2{
+	display:flex;
+
+.attachment{
+	border-radius:20%;
 }
+}
+
+
+
 
 
 //homes#about
