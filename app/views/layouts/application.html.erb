@@ -19,12 +19,10 @@
   <body>
   <!-- ナビゲーションバー -->
     <header class="header">
-      <div class="header-menu">
-
-          <nav>
+      <!-- <div class="header-menu"> -->
+          <%= image_tag 'logo.png', class: "logo" %>
+          <!-- <nav> -->
             <ul>
-                <div class="logo"><%= image_tag('logo.png') %></div>
-
               <% if user_signed_in? %>
                 <li class="nav"><%= link_to "TOP", root_path %></li>
                 <li class="nav"><%= link_to "About", about_path %></li>
@@ -40,9 +38,7 @@
                 <li class="nav"><%= link_to "Sign up", new_user_registration_path %></li>
               <% end %>
             </ul>
-          </nav>
-
-      </div>
+          <!-- </nav> -->
     </header>
 
   <!-- ログインエラー時のflashメッセージ -->
