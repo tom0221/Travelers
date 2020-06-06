@@ -20,14 +20,12 @@
 
 
 //post_images#index右下ボタン
-$(function() {
 
-  $('#page_top a').on('click',function(){
+$(function(){
+　$(document).on('click', '#page_top a', function(){
     $('body, html').animate({
       scrollTop:0
-    }, 0);
+    }, 600);
       return false;
-  });
-
+　});
 });
-
