@@ -4,16 +4,18 @@
 	<div style="text-align:center;">
 	<!-- フォロー機能 -->
 		<% unless @user == current_user %>
+			<div class="follow_button">
 			<% if current_user.following?(@user) %>
-				<%= link_to 'フォローを外す', unfollow_path(@user.id), method: :get %>
+				<%= link_to 'フォローを解除する', unfollow_path(@user.id), method: :get %>
 			<% else %>
 				<%= link_to 'フォローする', follow_path(@user.id), method: :get %>
 			<% end %>
+			</div>
 		<% end %>
 
 	<!-- imageのサイズ縦横比指定したい -->
 		<div class="image">
-			<%= attachment_image_tag @user, :profile_image, fallback: "no_image.jpg", size: "150x150" %>
+			<%= attachment_image_tag @user, :profile_image, fallback: "no_image.jpg", size: "200x200" %>
 		</div>
 
 
