@@ -26,18 +26,18 @@
                 <div class="logo"><%= image_tag('logo.png') %></div>
 
               <% if user_signed_in? %>
-                <li class="nav"><a href=”#”><%= link_to "TOP", root_path %></a></li>
-                <li class="nav"><a href=”#”><a href=”#”><%= link_to "About", about_path %></a></li>
-                <li class="nav"><a href=”#”><%= link_to "Logout", destroy_user_session_path, method: :delete %></a></li>
-                <li class="nav"><a href=”#”><%= link_to "My Page", user_path(current_user.id) %></a></li>
+                <li class="nav"><%= link_to "TOP", root_path %></li>
+                <li class="nav"><%= link_to "About", about_path %></li>
+                <li class="nav"><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+                <li class="nav"><%= link_to "My Page", user_path(current_user.id) %></li>
                 <li class="icon">
                   <%= attachment_image_tag current_user, :profile_image, fallback: "no_image.jpg", :class => "p-img" %>
                 </li>
               <% else %>
-                <li class="nav"><a href=”#”><a href=”#”><%= link_to "TOP", root_path %></a></li>
-                <li class="nav"><a href=”#”><%= link_to "About", about_path %></a></li>
-                <li class="nav"><a href=”#”><a href=”#”><%= link_to "Login", new_user_session_path %></a></li>
-                <li class="nav"><a href=”#”><%= link_to "Sign up", new_user_registration_path %></a></li>
+                <li class="nav"><%= link_to "TOP", root_path %></li>
+                <li class="nav"><%= link_to "About", about_path %></li>
+                <li class="nav"><%= link_to "Login", new_user_session_path %></li>
+                <li class="nav"><%= link_to "Sign up", new_user_registration_path %></li>
               <% end %>
             </ul>
           </nav>
