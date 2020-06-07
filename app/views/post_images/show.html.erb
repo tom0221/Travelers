@@ -22,7 +22,7 @@
 				<%= link_to "削除", post_image_path(@post_image.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
 			<% end %>
 
-			<%= link_to "戻る", post_images_path %><br>
+			<%= link_to "戻る", post_images_path %>
 
 
 		<!-- いいね機能部分テンプレート -->
@@ -31,13 +31,15 @@
 		</div>
 
 		<!-- コメント機能 -->
-		<h4>コメント一覧</h4>
-			<% @post_image.post_comments.each do |post_comment| %><br>
+		<h3>コメント一覧</h3><br>
+			<span class="comment-index">
+			<% @post_image.post_comments.each do |post_comment| %>
 				<table>
 					<tr>
 						<%= post_comment.user.name %>
 						<%= post_comment.comment %>
 					</tr>
+			</span>
 
 		<!-- 本人であれば削除できるif文 -->
 					<% if post_comment.user == current_user %>

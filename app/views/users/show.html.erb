@@ -3,6 +3,7 @@
 
 	<div style="text-align:center;">
 	<!-- フォロー機能 -->
+	<% if user_signed_in? %>
 		<% unless @user == current_user %>
 			<% if current_user.following?(@user) %>
 				<%= link_to 'フォローを解除する', unfollow_path(@user.id), method: :get, class:"btn-orange" %>
@@ -10,6 +11,7 @@
 				<%= link_to 'フォローする', follow_path(@user.id), method: :get, class:"btn-orange" %>
 			<% end %>
 		<% end %>
+	<% end %>
 
 
 		<div class="image">
