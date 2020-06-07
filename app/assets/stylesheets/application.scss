@@ -80,7 +80,8 @@ a{
   transition: color 300ms, background-color 300ms;
   &:hover{
     // background-color: #ffeaff;
-    background-color: #eaf4ff;
+    // background-color: #eaf4ff;
+    opacity: 0.2;
     color: #fff;
   }
 }
