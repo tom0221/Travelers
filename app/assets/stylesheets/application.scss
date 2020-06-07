@@ -153,3 +153,27 @@ footer{
 }
 
 
+//レスポンシブ
+@media screen and (max-width: 479px) { /*ウィンドウ幅が最大479pxまでの場合に適用*/
+ul {
+  // width:70%;
+  // list-style: none;
+  // margin: 0;
+  // padding-left:10px;
+  // display: flex;
+  float: none;
+  width: auto;
+}
+
+//margin-rightでnav間隔調整
+li {
+  width:auto;
+  float:none;
+//   margin-right:60px;
+//   margin-left:60px;
+//   font-size: 20px;
+// //追加してみる
+//   border-bottom: 3px solid #ff93ff;
+}
+
+}
