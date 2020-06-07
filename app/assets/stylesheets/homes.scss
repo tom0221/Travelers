@@ -5,35 +5,40 @@
 
 //homes#top
 
-// .row{
-// 	margin-top:40px;
-// }
-
 .new{
 	font-size:30px;
 	margin-top: 10px;
 }
 
+.new-post{
+	display: inline-block;
+	padding: 0.5em 1em;
+	text-decoration: none;
+	border-radius: 3px;
+	font-weight: bold;
+	color: #FFF;
+	background-color:#93c9ff;
+	transition: .4s;
+	font-size:16px;
+}
+
+.new-post:hover{
+	background-color:#8e8eff;
+}
 
 .form{
 	text-align:right;
 }
-
-
 
 //投稿写真本体
 .photo2{
 	display:flex;
 	text-decoration:none;
 	font-style:italic;
-
 .attachment{
 	border-radius:20%;
 }
 }
-
-
-
 
 
 //homes#about
@@ -42,3 +47,18 @@
 	text-align:center;
 }
 
+
+.btn-gradient-simple {
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  border-radius: 3px;
+  font-weight: bold;
+  color: #FFF;
+  background-image: linear-gradient(45deg, #709dff 0%, #b0c9ff 100%);
+  transition: .4s;
+}
+
+.btn-gradient-simple:hover {
+  background-image: linear-gradient(45deg, #709dff 50%, #b0c9ff 100%);
+}
