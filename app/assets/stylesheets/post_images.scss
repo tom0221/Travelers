@@ -2,7 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
 h2{
 	padding-top:20px;
 	margin-left:20px;
@@ -69,8 +68,11 @@ h2{
   font-size:24px;
 }
 
+//コメントCSS
 .comment-index{
-  size:30px;
+  font-size:20px;
+  font-weight: bold;
+  color:#594e52;
 }
 
 textarea {

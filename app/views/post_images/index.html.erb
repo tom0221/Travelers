@@ -1,7 +1,5 @@
-<!-- 要インデント確認 -->
 <div class="container">
 	<h2 class="index">ー Photo Gallery ー</h2>
-
 	<!-- each文で繰り返し表示 -->
 		<div class="photo">
 			<% @post_images.each do |post_image| %>
@@ -10,27 +8,23 @@
 						<%= attachment_image_tag post_image, :image, size: "290x290" %>
 				<br>
 					<% end %>
-						Photo by <%= link_to post_image.user.name, user_path(post_image.user_id) %>
+						Photo by <strong><%= link_to post_image.user.name, user_path(post_image.user_id) %></strong>
 
 						<%= link_to "#{post_image.post_comments.count} コメント", post_image_path(post_image.id) %>
 				</div>
 			<% end %>
 		</div>
 
-
 	<!-- 右下JS戻るボタン追加 -->
 	<div id="page_top">
 		<a href="#"></a></div>
 
-
+	<!-- ページネーション -->
 	<div class="row">
 		<p class="index-page">
 			<%= paginate @post_images %>
 		</p>
 	</div>
-
-
-
 </div>
 
 
