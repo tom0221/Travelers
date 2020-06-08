@@ -28,7 +28,7 @@
 		<% end %>
 
 
-		<h2><%= @user.name %></h2><br>
+		<h2 class=author><%= @user.name %></h2><br>
 			<h4>投稿数　<strong><%= @user.post_images.count %></strong> 件</h4><br>
 			<p>フォロー中 人数<br>
 			<%= link_to @user.follower.count, users_follower_path(id:@user.id) %><br>

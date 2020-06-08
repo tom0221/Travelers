@@ -40,6 +40,13 @@ ja:
               blank: "を入力してください"
 
 
+        user:
+          attributes:
+            user:
+              name: ユーザー名
+              email: メールアドレス
+
+
 
 #ページネーションの日本語化
 ja:
