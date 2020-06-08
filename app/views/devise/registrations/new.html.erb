@@ -27,16 +27,23 @@
       <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
     </div>
 
+    <br>
+
     <div class="actions">
-      <%= f.submit "新規登録" %>
+      <%= f.submit "新規登録" %><br>
+
+      <button type="actions"><%= link_to "登録済みの方はこちらから", new_user_session_path %></button>
     </div>
   <% end %>
-<!-- SNSログイン第二弾 -->
-<i class="fab fa-facebook">
-  <%= link_to "Facebookでログイン", user_facebook_omniauth_authorize_path,method: :post %></i>
-<i class="fab fa-google">
-  <%= link_to "Googleでログイン", user_google_oauth2_omniauth_authorize_path,method: :post %></i>
 
-  <%#= render "devise/shared/links" %>
+  <br>
+
+  <!-- SNSログイン -->
+  <i class="fab fa-facebook">
+    <%= link_to "Facebookでログイン", user_facebook_omniauth_authorize_path,method: :post %></i>
+  <i class="fab fa-google">
+    <%= link_to "Googleでログイン", user_google_oauth2_omniauth_authorize_path,method: :post %></i>
+
+
 </div>
 

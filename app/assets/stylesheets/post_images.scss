@@ -2,75 +2,130 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
-// *{
-// 	text-align: center;
-// }
-
 h2{
 	padding-top:20px;
 	margin-left:20px;
 }
 
+//親要素photoに入れ子構造
 .photo{
-	margin:20px;
 	padding:20px;
-	width:300px;
-	// height: 250px;
+  width:100%;
 	float:left;
+  column-count: 3;
+  column-width:100%;
+  margin-left: 30px;
+  max-width: 100%;
+  height: auto;
+
+.attachment{
+  object-fit:cover;
 }
 
+.attachment::before {
+  content: "";
+  display: inline-block;
+  padding-top: 50%;
+}
+}
+//入れ子ここまで
+
+
+//post_images#index項目
+
+.index-page{
+  margin-right: 1000px;
+  font-size:30px;
+}
+
+
+
+//post-image#show
+//show-photoはattachmentと同じdiv
 .show_photo{
 	text-align: center;
 	margin-top:30px;
+  object-fit:cover;
+}
+
+.photo2{
+  display: inline-block;
 }
 
 .title-comment{
-	margin-top:60px;
+	margin-top:20px;
 	margin-left:270px;
 }
 
 .map{
- text-align: center;
+  text-align: center;
 }
 
 .date{
 	text-align :right;
-	margin-right :250px;
+	margin-right :280px;
+  font-style:italic;
+  font-size:24px;
 }
+
+//コメントCSS
+.comment-index{
+  font-size:20px;
+  font-weight: bold;
+  color:#594e52;
+}
+
+textarea {
+  max-width: 500px;
+  clear: both;
+}
+//ここまでpost_images#show
 
 .username{
 	font-size: 25px;
 	font-weight:bold;
 }
 
+//post_images#new
 .new-post{
-	text-align: center;
-	margin:o auto;
+	// text-align: center;
+	margin:0 auto;
 }
 
+
+.form-control{
+  margin:0 auto;
+}
+
+
+//post_images#new 投稿フォーム
 input[type="title"] {
-    width: 200px;
-    height: 30px;
+  width: 200px;
+  height: 30px;
 }
 
 input[type="body"] {
-    width: 250px;
-    height: 50px;
+  width: 250px;
+  height: 50px;
 }
 
 
-//js上に戻るボタン追加
+//index/js上に戻るボタン追加
 #page_top{
   width: 50px;
   height: 50px;
   position: fixed;
-  right: 0;
-  bottom: 0;
+  right: 20px;
+  bottom: 30px;
   background: #3f98ef;
   opacity: 0.8;
   border-radius: 50%;
 }
+
+.scroll-top:hover {
+  cursor: pointer;
+}
+
 #page_top a{
   position: relative;
   display: block;
@@ -93,4 +148,20 @@ input[type="body"] {
   left: 0;
   margin: auto;
   text-align: center;
+}
+
+
+
+
+//レスポンシブしないなら不要
+
+@media screen and (max-width: 479px) { /*ウィンドウ幅が最大479pxまでの場合に適用*/
+.photo{
+    // padding:20px;
+    width:auto;
+    float:none;
+    column-count: auto;
+    // column-width:100%;
+    // margin-left: 30px;
+}
 }

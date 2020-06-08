@@ -6,8 +6,14 @@
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <!-- 追加 -->
+    <!-- font-awesome追加 -->
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <!-- jquery追加 -->
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    <!-- レスポンシブデザイン -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
 
 
   </head>
@@ -15,33 +21,24 @@
   <body>
   <!-- ナビゲーションバー -->
     <header class="header">
-      <div class="header-menu">
-
-        <h1>
-          <i class="fas fa-globe-asia"><%= link_to "Travelers", root_path %></i></h1>
-
-          <nav>
-            <ul>
-              <% if user_signed_in? %>
-                <li><%= link_to "TOP", root_path %></li>
-                <li><%= link_to "About", about_path %></li>
-                <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
-                <li><%= link_to "My Page", user_path(current_user.id) %></li>
-                <div class="icon">
-                  <%= attachment_image_tag current_user, :profile_image, fallback: "no_image.jpg", :class => "p-img" %>
-                </div>
-              <% else %>
-                <li><%= link_to "TOP", root_path %></li>
-                <li><%= link_to "About", about_path %></li>
-                <li><%= link_to "Login", new_user_session_path %></li>
-                <li><%= link_to "Sign up", new_user_registration_path %></li>
-              <% end %>
-            </ul>
-          </nav>
-
-      </div>
+      <%= image_tag 'logo.png', class: "logo" %>
+        <ul>
+          <% if user_signed_in? %>
+            <li class="nav"><%= link_to "TOP", root_path %></li>
+            <li class="nav"><%= link_to "About", about_path %></li>
+            <li class="nav"><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+            <li class="nav"><%= link_to "My Page", user_path(current_user.id) %></li>
+            <li class="icon">
+              <%= attachment_image_tag current_user, :profile_image, fallback: "no_image.jpg", :class => "p-img" %>
+            </li>
+          <% else %>
+            <li class="nav"><%= link_to "TOP", root_path %></li>
+            <li class="nav"><%= link_to "About", about_path %></li>
+            <li class="nav"><%= link_to "Login", new_user_session_path %></li>
+            <li class="nav"><%= link_to "Sign up", new_user_registration_path %></li>
+          <% end %>
+        </ul>
     </header>
-
 
   <!-- ログインエラー時のflashメッセージ -->
       <% if flash[:alert] %>
@@ -51,6 +48,8 @@
       <% end %>
 
   <!-- flashサクセスメッセージ  -->
+      <br>
+      <br>
       <% if flash[:notice] %>
         <div class="flash">
           <%= flash[:notice] %>
@@ -58,6 +57,10 @@
       <% end %>
 
     <%= yield %>
+
+  <footer>
+    <p>© ALL rights reserved by Travelers.Inc.</p>
+  </footer>
 
   </body>
 </html>

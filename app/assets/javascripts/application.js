@@ -17,3 +17,15 @@
 //= require popper
 //= require bootstrap-sprockets
 //= require_tree .
+
+
+//post_images#index右下ボタン
+
+$(function(){
+　$(document).on('click', '#page_top a', function(){
+    $('body, html').animate({
+      scrollTop:0
+    }, 600);
+      return false;
+　});
+});
