@@ -151,6 +151,10 @@ footer{
   clear:both;
 }
 
+.actions{
+  margin:10px;
+}
+
 
 //レスポンシブ
 
@@ -164,6 +168,7 @@ footer{
 .li {
   width:auto;
   float:none;
+  color: green;
 }
 
 .header{
