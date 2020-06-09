@@ -21,15 +21,16 @@
 
   <body>
   <!-- ナビゲーションバー -->
+  <!-- <div class="row"> -->
     <header class="header">
       <%= image_tag 'logo.png', class: "logo" %>
-        <ul>
+        <ul class="list-group list-group-horizontal">
           <% if user_signed_in? %>
-            <li class="nav"><%= link_to "TOP", root_path %></li>
-            <li class="nav"><%= link_to "About", about_path %></li>
-            <li class="nav"><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
-            <li class="nav"><%= link_to "My Page", user_path(current_user.id) %></li>
-            <li class="icon">
+            <li class= "nav"><%= link_to "TOP", root_path %></li>
+            <li class= "nav"><%= link_to "About", about_path %></li>
+            <li class= "nav"><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+            <li class= "nav"><%= link_to "My Page", user_path(current_user.id) %></li>
+            <li class= "nav">
               <%= attachment_image_tag current_user, :profile_image, fallback: "no_image.jpg", :class => "p-img" %>
             </li>
           <% else %>
@@ -40,6 +41,7 @@
           <% end %>
         </ul>
     </header>
+  <!-- </div> -->
 
   <!-- ログインエラー時のflashメッセージ -->
       <% if flash[:alert] %>

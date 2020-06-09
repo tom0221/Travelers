@@ -17,7 +17,6 @@
  /*bootstrap用に追加*/
   @import "bootstrap";
 
-
 * {
   box-sizing: border-box;
 }
@@ -46,45 +45,46 @@ body {
 }
 
 ul {
-  width:70%;
+  // width:70%;
   list-style: none;
-  margin: 0;
-  padding-left:10px;
-  display: flex;
+  // margin: 0;
+  // padding-left:10px;
+  // display: flex;
   float: right;
 }
 
 //margin-rightでnav間隔調整
 li {
-  margin-right:60px;
-  margin-left:60px;
+  margin-right:80px;
+  // margin-left:150px;
+  margin-top:20px;
   font-size: 20px;
+  vertical-align: top;
 }
 
 //navの上下調整
 .nav{
 a{
-  line-height:110px;
+  // line-height:110px;
   text-decoration:none;
-  // font-weight:bolder;
+  margin:20px;
 }
 }
 
 
 //hovorする
 .nav{
-  position: relative;
+  // position: relative;
+  // position: fixed;
   background: #d6ffd6;
   transition: color 300ms, background-color 300ms;
   &:hover{
     // background-color: #ffeaff;
-    // background-color: #eaf4ff;
     opacity: 0.5;
     color: #fff;
     border-bottom:3px solid #00B0F0;
   }
 }
-
 
 
 header{
@@ -113,8 +113,8 @@ a {
 }
 
 .icon{
-	position:absolute;
-	right:50px;
+	// position:absolute;
+	right:70px;
   top:25px;
 }
 
@@ -164,11 +164,17 @@ footer{
   width: auto;
 }
 
+.ul{
+  float: right;
+  // width:auto;
+}
 //margin-rightでnav間隔調整
 .li {
   width:auto;
   float:none;
   color: green;
+
+  display: inline-block;
 }
 
 .header{
@@ -177,3 +183,10 @@ footer{
 }
 }
 
+// .toggle{
+//   display: block;
+//   position:relative;
+//   padding:12px 0 10px;
+//   text-align: center;
+//   text-decoration: none;
+// }
