@@ -45,12 +45,9 @@ body {
 }
 
 ul {
-  // width:70%;
   list-style: none;
-  // margin: 0;
-  // padding-left:10px;
-  // display: flex;
-  float: right;
+  display: flex;
+  // float: right;
 }
 
 //margin-rightでnav間隔調整
@@ -94,6 +91,7 @@ header{
   opacity: 0.95;
 	height:110px;
 	align-items: center;
+  display:flex;
 }
 
 
@@ -158,35 +156,34 @@ footer{
 
 //レスポンシブ
 
-@media screen and (max-width: 479px) { /*ウィンドウ幅が最大479pxまでの場合に適用*/
-.a{
-  float: none;
-  width: auto;
-}
+@media screen and (max-width: 1024px) { /*ウィンドウ幅が最大479pxまでの場合に適用*/
 
 .ul{
-  float: right;
-  // width:auto;
+  flex-direction: column;
 }
-//margin-rightでnav間隔調整
-.li {
-  width:auto;
-  float:none;
-  color: green;
-
-  display: inline-block;
-}
-
-.header{
-  float: none;
-  width: auto;
-}
-}
-
-// .toggle{
-//   display: block;
-//   position:relative;
-//   padding:12px 0 10px;
-//   text-align: center;
-//   text-decoration: none;
+// .a{
+//   display:flex;
+//   float: none;
+//   width: auto;
 // }
+
+// .ul{
+//   // float: right;
+//   display: flex;
+//   flex-direction: column;
+//   // width:auto;
+// }
+// //margin-rightでnav間隔調整
+// .li {
+//   width:auto;
+//   display:none;
+//   float:none;
+//   // background-color: red;
+// }
+
+// .header{
+//   float: none;
+//   width: auto;
+// }
+}
+
