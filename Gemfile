@@ -72,6 +72,7 @@ gem "refile-mini_magick"
 
 #最新版bootstrapに変更
 gem 'bootstrap', '~> 4.3.1'
+#jquery使用
 gem 'jquery-rails'
 
 #日本語化
@@ -88,6 +89,3 @@ gem 'omniauth-rails_csrf_protection'
 
 #MySQL利用のためのgem追加
 gem 'dotenv-rails'
-
-#jquery使用
-gem "jquery-rails"
