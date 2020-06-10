@@ -89,6 +89,13 @@ gem 'omniauth-rails_csrf_protection'
 
 #MySQL利用のためのgem追加
 gem 'dotenv-rails'
-group :production, :staging do
+group :production do
   gem 'mysql2'
+end
+
+group :development, :test do
+  gem 'capistrano'
+  gem 'capistrano-rails'
+  gem 'capistrano-puma'
+  gem 'capistrano-rbenv'
 end
