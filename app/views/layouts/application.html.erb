@@ -20,7 +20,7 @@
   <!-- ナビゲーションバー -->
   <!-- <div class="container"> -->
     <header class="header">
-      <%= image_tag assets_path('logo.png', class: "logo") %>
+      <%= image_tag assets_path('logo.png'), class: "logo" %>
         <ul class="list-group list-group-horizontal">
           <% if user_signed_in? %>
             <li class= "nav"><%= link_to "TOP", root_path %></li>
