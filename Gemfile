@@ -90,7 +90,7 @@ gem 'omniauth-rails_csrf_protection'
 #MySQL利用のためのgem追加
 gem 'dotenv-rails'
 group :production do
-  gem 'mysql2', '~>0.4.4'
+  gem 'mysql2'
 end
 
 # group :development do
