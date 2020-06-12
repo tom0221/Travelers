@@ -23,9 +23,6 @@ Rails.application.routes.draw do
 
   get "users/search" => "users#search"
 
-  # get '*unmatched_route', to: 'homes#about'
-  #   mount Refile.app, at: Refile.mount_point, as: :refile_app
-
   resources :post_images, only: [:new, :create, :index, :show, :edit, :destroy] do
   	resource :favorites, only: [:create, :destroy]
   	resources :post_comments, only: [:create, :destroy]
