@@ -38,8 +38,6 @@ h2{
   font-size:30px;
 }
 
-
-
 //post-image#show
 //show-photoはattachmentと同じdiv
 .show_photo{
@@ -55,10 +53,6 @@ h2{
 .title-comment{
 	margin-top:20px;
 	margin-left:270px;
-}
-
-.map{
-  text-align: center;
 }
 
 .date{
@@ -97,7 +91,6 @@ textarea {
   margin:0 auto;
 }
 
-
 //post_images#new 投稿フォーム
 input[type="title"] {
   width: 200px;
@@ -108,7 +101,6 @@ input[type="body"] {
   width: 250px;
   height: 50px;
 }
-
 
 //index/js上に戻るボタン追加
 #page_top{
@@ -151,17 +143,12 @@ input[type="body"] {
 }
 
 
-
-
 //レスポンシブしないなら不要
 
 @media screen and (max-width: 479px) { /*ウィンドウ幅が最大479pxまでの場合に適用*/
 .photo{
-    // padding:20px;
     width:auto;
     float:none;
     column-count: auto;
-    // column-width:100%;
-    // margin-left: 30px;
 }
 }
