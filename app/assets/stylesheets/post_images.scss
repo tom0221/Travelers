@@ -82,10 +82,8 @@ textarea {
 
 //post_images#new
 .new-post{
-	// text-align: center;
 	margin:0 auto;
 }
-
 
 .form-control{
   margin:0 auto;
@@ -141,10 +139,9 @@ input[type="body"] {
   margin: auto;
   text-align: center;
 }
+//JSボタンここまで
 
-
-//レスポンシブしないなら不要
-
+//レスポンシブ対応用記述
 @media screen and (max-width: 479px) { /*ウィンドウ幅が最大479pxまでの場合に適用*/
 .photo{
     width:auto;
