@@ -3,16 +3,14 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-// .image {
-//     border-radius:50%;
-//     // -moz-border-radius: 50%;
-//     // -webkit-border-radius: 50%;
-//     width:  100px;       /* ※縦横を同値に */
-//     height: 100px;       /* ※縦横を同値に */
-// }
-
 .user_post{
 	text-align:center;
+  display: flex;
+  flex-wrap:wrap;
+
+.attachment{
+  padding:5px;
+}
 }
 
 .results{
@@ -24,7 +22,6 @@
 }
 
 //user#show
-
 .image{
 .attachment{
 	border-radius:50%;
@@ -67,6 +64,13 @@
 //users#search
 .results-list{
 	font-size:24px;
+}
+
+//users#follow,follower
+.back{
+  text-align: center;
+  font-size:20px;
+  margin-top:30px;
 }
 
 //users#thanks

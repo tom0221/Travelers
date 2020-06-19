@@ -50,7 +50,9 @@
 	<!-- @userの投稿写真一覧 -->
 		<div class="user_post">
 			<% @user.post_images.each do |post_image| %>
-				<%= attachment_image_tag post_image,:image, size: "270x225" %>
+				<%= link_to post_image_path(post_image.id) do %>
+					<%= attachment_image_tag post_image,:image, size: "270x225" %>
+				<% end %>
 			<% end %>
 		</div>
 	</div>

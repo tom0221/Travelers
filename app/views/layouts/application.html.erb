@@ -8,27 +8,25 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <!-- font-awesome追加 -->
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <!-- レスポンシブデザイン -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
     <!-- jquery追加 -->
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
-    <!-- レスポンシブデザイン -->
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-
-
 
   </head>
-
   <body>
   <!-- ナビゲーションバー -->
     <header class="header">
-      <%= image_tag 'logo.png', class: "logo" %>
-        <ul>
+      <%= image_tag('/images/logo.png', class: "logo") %>
+        <ul class="list-group list-group-horizontal">
           <% if user_signed_in? %>
-            <li class="nav"><%= link_to "TOP", root_path %></li>
-            <li class="nav"><%= link_to "About", about_path %></li>
-            <li class="nav"><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
-            <li class="nav"><%= link_to "My Page", user_path(current_user.id) %></li>
-            <li class="icon">
+            <li class= "nav"><%= link_to "TOP", root_path %></li>
+            <li class= "nav"><%= link_to "About", about_path %></li>
+            <li class= "nav"><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+            <li class= "nav"><%= link_to "My Page", user_path(current_user.id) %></li>
+            <li class= "nav">
               <%= attachment_image_tag current_user, :profile_image, fallback: "no_image.jpg", :class => "p-img" %>
             </li>
           <% else %>
@@ -61,6 +59,7 @@
   <footer>
     <p>© ALL rights reserved by Travelers.Inc.</p>
   </footer>
+
 
   </body>
 </html>

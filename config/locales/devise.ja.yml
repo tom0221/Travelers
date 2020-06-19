@@ -6,6 +6,10 @@ ja:
         email: メールアドレス
         password: パスワード
 
+      post_image:
+        image: 写真
+        title: タイトル
+
 
     errors:
       models:
@@ -16,4 +20,12 @@ ja:
             password:
               blank: "を入力してください"
             name:
+              blank: "を入力してください"
+
+
+        post_image:
+          attributes:
+            image:
+              blank: "を選択してください"
+            title:
               blank: "を入力してください"
