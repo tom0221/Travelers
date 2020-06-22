@@ -2,8 +2,8 @@ class UsersController < ApplicationController
 
   before_action :authenticate_user!, only: [:edit,]
 
-	def create
-	end
+  def create
+  end
 
   def show
   	@user = User.find(params[:id])
