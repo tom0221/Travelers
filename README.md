@@ -22,6 +22,7 @@ https://travelers.work/
 
 ### 使用フレームワーク
 Ruby on Rails (version 5.2.4.2)
+Ruby (version 2.6.0)
 
 ## 設計書
 https://docs.google.com/spreadsheets/d/1XiLouoM_j-0FzKNTRjM66rF7NQiFICGZ9Pm807WeWAI/edit?usp=sharing
