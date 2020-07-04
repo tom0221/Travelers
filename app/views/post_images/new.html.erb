@@ -4,28 +4,48 @@
 		<!-- 新規投稿画面 form_for使用-->
 			<%= form_for(@post_image) do |f| %>
 
-			<h2>NEW POST</h2>
+				<h2>NEW POST</h2>
 
-		<!-- エラーメッセージ表示テンプレート -->
-			<div class="new-post">
-				<%= render 'layouts/error_messages', model: f.object %>
+			<!-- エラーメッセージ表示テンプレート -->
+				<div class="new-post">
+					<%= render 'layouts/error_messages', model: f.object %>
 
-					<div class="form-group">
-						<%= f.attachment_field :image %>
+						<div class="form-group">
+							<%= f.attachment_field :image, id: :post_img %>
 
-						<h5>タイトル</h5>
+							<h5>タイトル</h5>
 
-							<input type="title" name="post_image[title]"class="form-control">
+								<input type="title" name="post_image[title]"class="form-control">
 
-						<h5>説明</h5>
+							<h5>説明</h5>
 
-							<input type="body" class="form-control" name="post_image[body]" placeholder="キャプション入力" >
-						<br>
-							<%= f.submit 'シェアする', class: "btn btn-primary rounded-pill" %>
-					</div>
+								<input type="body" class="form-control" name="post_image[body]" placeholder="キャプション入力" >
+							<br>
+								<%= f.submit 'シェアする', class: "btn btn-primary rounded-pill" %>
+						</div>
+				</div>
+			<% end %>
 
-				<% end %>
+			<div class="preview">
+				<%= attachment_image_tag @post_image, :image, id: 'img_prev', size: "290x290" %>
 			</div>
+
+				<script type="text/javascript">
+				$(function() {
+				 function readURL(input) {
+				   if (input.files && input.files[0]) {
+				     var reader = new FileReader();
+				     reader.onload = function (e) {
+				       $('#img_prev').attr('src', e.target.result);
+				     }
+				     reader.readAsDataURL(input.files[0]);
+				   }
+				 }
+				 $("#post_img").add(function(){
+				   readURL(this);
+				 });
+				});
+				</script>
 		</div>
 	</div>
 </div>
