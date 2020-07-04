@@ -10,7 +10,7 @@
 	<!-- 検索機能 -->
 	<div class="form">
 		<%= form_with url: users_search_path, method: :get, local: true do |f| %>
-			<%= f.text_field :name %>
+			<%= f.text_field :name, :placeholder => "User Search" %>
 			<%= f.submit "検索" %>
 		<% end %>
 	</div>
