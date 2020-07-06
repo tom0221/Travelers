@@ -55,7 +55,7 @@ a{
 
 //homes#about
 .about{
-	margin:30px;
+	margin:20px;
 	text-align:center;
 }
 
@@ -86,13 +86,16 @@ a{
   	 background: rgba(255,255,255,0.2);
 }
 
+
 .about{
 	// background-image: url("<%= asset_path('hawaii.jpg') %>");
 	background: image-url('hawaii.jpg');
+	// background: image-url('photo8.jpeg');
 	height: 400px;
   	background-size:cover;
-  	background-blend-mode:lighten;
+}
+.container{
+  height: 500px; /* ここの高さはいくつでも構いません */
 }
 // body{
-// 	background: image-url('hawaii.jpg')
 // }
