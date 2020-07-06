@@ -80,10 +80,18 @@ a{
 }
 
 //背景
-body{
-	background-image: url("<%= asset_path('hawaii.jpg') %>");
-	height: 200px;
+.text{
+  	// z-index:0.7;
+  	// opacity:1;
+  	 background: rgba(255,255,255,0.2);
+}
+
+.about{
+	// background-image: url("<%= asset_path('hawaii.jpg') %>");
+	background: image-url('hawaii.jpg');
+	height: 400px;
   	background-size:cover;
+  	background-blend-mode:lighten;
 }
 // body{
 // 	background: image-url('hawaii.jpg')
