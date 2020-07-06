@@ -78,3 +78,13 @@ a{
 .btn-gradient-simple:hover {
   background-image:linear-gradient(45deg, #709dff 50%, #b0c9ff 100%);
 }
+
+//背景
+body{
+	background-image: url("<%= asset_path('hawaii.jpg') %>");
+	height: 200px;
+  	background-size:cover;
+}
+// body{
+// 	background: image-url('hawaii.jpg')
+// }
