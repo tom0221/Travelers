@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
-
   def facebook
     callback_for(:facebook)
   end
@@ -22,21 +21,17 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       @user.password = password
       @sns = info[:sns]
       @user.save
-      @sns.user_id= @user.id
+      @sns.user_id = @user.id
       @sns.save
-      #redirect_to root_path
+      # redirect_to root_path
       sign_in_and_redirect @user, event: :authentication
       set_flash_message(:notice, :success, kind: "#{provider}".capitalize) if is_navigational_format?
     end
   end
 
   def failure
-      redirect_to root_path and return
+    redirect_to(root_path) && return
   end
-
-
-
-
 
   # You should configure your model like this:
   # devise :omniauthable, omniauth_providers: [:twitter]
