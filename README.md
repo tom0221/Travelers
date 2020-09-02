@@ -20,6 +20,13 @@ https://travelers.work/
 インスタ映えする写真をスマートフォンの待ち受けに設定する。
 サイトを通してバーチャル旅行を楽しむ。
 
+### 使用言語
+Ruby,
+HTML,
+SCSS,
+jQuery,
+SQL
+
 ### 使用フレームワーク
 Ruby on Rails (version 5.2.4.2)
 Ruby (version 2.6.0)
