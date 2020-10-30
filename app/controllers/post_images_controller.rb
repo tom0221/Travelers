@@ -6,16 +6,16 @@ class PostImagesController < ApplicationController
   end
 
   def index
-    @post_images = PostImage.page(params[:page]).per(12).order("created_at DESC")#現状12枚表示
+    @post_images = PostImage.page(params[:page]).per(12).order("created_at DESC") # 現状12枚表示
   end
 
   def create
-  	@post_image = PostImage.new(post_image_params)
-  	@post_image.user_id = current_user.id
-    #条件分岐
-  	if @post_image.save
+    @post_image = PostImage.new(post_image_params)
+    @post_image.user_id = current_user.id
+    # 条件分岐
+    if @post_image.save
       flash[:notice] = "投稿完了しました！"
-  	 redirect_to root_path
+      redirect_to root_path
     else
       render :new
     end
@@ -33,8 +33,8 @@ class PostImagesController < ApplicationController
   end
 
   private
-  def post_image_params
-  	params.require(:post_image).permit(:title, :body, :image)
-  end
 
+  def post_image_params
+    params.require(:post_image).permit(:title, :body, :image)
+  end
 end
